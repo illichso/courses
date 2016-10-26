@@ -1,8 +1,9 @@
-# Spring Boot + Groovy + React + Redux + ES6
+# Java + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6
 
 ## What I need to run it in dev mode?
 Install Gradle 3.1  
 Install Node 7.0.0
+
 Run:
 
 ```
