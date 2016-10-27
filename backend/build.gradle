@@ -41,15 +41,15 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
     compile 'org.springframework.boot:spring-boot-starter-data-rest'
     compile 'org.springframework.data:spring-data-rest-hal-browser'
-    compile "org.projectlombok:lombok:1.16.10"
+    compile 'org.projectlombok:lombok'
 
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    compile 'org.apache.commons:commons-lang3:3.4'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.springframework.security:spring-security-test'
     testCompile 'org.spockframework:spock-spring'
     testCompile 'com.geowarin:spring-spock-mvc:0.2.1'
-    testCompile group: "de.flapdoodle.embed", name: "de.flapdoodle.embed.mongo", version: "1.50.3"
+    testCompile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:1.50.3'
 }
 
 eclipse {

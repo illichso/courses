@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-starter",
+  "name": "courses",
   "version": "1.0.0",
-  "description": "Full STack project with Java, Spring Boot, MongoDB, Groovy, React, Redux, ES6",
+  "description": "Full Stack project with Java, Spring Boot, MongoDB, Groovy, React, Redux, ES6",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
@@ -17,8 +17,8 @@
     "build": "babel-node tools/build.js",
     "postbuild": "babel-node tools/distServer.js"
   },
-  "author": "Cory House",
-  "license": "MIT",
+  "author": "Sergii Illichevskyi",
+  "license": "Apache-2.0",
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
