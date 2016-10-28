@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-public abstract class Model implements Serializable {
+abstract class Model implements Serializable {
     @Id
     private String id;
 }
