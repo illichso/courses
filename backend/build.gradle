@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.4.1.RELEASE'
+        springBootVersion = '1.4.+'
     }
     repositories {
         mavenCentral()
@@ -43,7 +43,7 @@ dependencies {
     compile 'org.springframework.data:spring-data-rest-hal-browser'
     compile 'org.projectlombok:lombok'
 
-    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'org.apache.commons:commons-lang3:+'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.springframework.security:spring-security-test'
