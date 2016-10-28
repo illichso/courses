@@ -12,7 +12,7 @@ import java.util.List;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-@AllArgsConstructor @NoArgsConstructor
+@AllArgsConstructor
 @Document(collection = "user")
 public class User extends Model{
     private String username;
