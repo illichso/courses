@@ -6,7 +6,7 @@ class UserTest extends Specification{
 
     def "check user constructor"() {
         given:
-            def user = new User(username:'name1')
+            def user = new User("name1", null, null)
         when:
             def name = user.username
 

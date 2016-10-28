@@ -1,4 +1,4 @@
-package com.ololos.config.mongo;
+package com.serg.config.mongo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.session.data.mongo.JdkMongoSessionConverter;
