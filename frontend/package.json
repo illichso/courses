@@ -13,7 +13,7 @@
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
     "build:html": "babel-node tools/buildHtml.js",
-    "prebuild": "npm-run-all clean-dist test lint build:html",
+    "prebuild": "npm-run-all clean-dist test build:html",
     "build": "babel-node tools/build.js",
     "postbuild": "babel-node tools/distServer.js"
   },
@@ -42,6 +42,7 @@
     "babel-preset-react": "6.5.0",
     "babel-preset-react-hmre": "1.1.1",
     "babel-register": "6.8.0",
+    "browser-sync": "2.17.5",
     "colors": "1.1.2",
     "compression": "1.6.1",
     "chalk": "1.1.3",
