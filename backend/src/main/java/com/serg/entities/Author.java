@@ -1,4 +1,4 @@
-package com.serg.model;
+package com.serg.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

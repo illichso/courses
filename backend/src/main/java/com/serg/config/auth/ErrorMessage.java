@@ -1,21 +1,16 @@
-package com.serg.model;
+package com.serg.config.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Setter;
-
 import java.io.Serializable;
-
 import static lombok.AccessLevel.NONE;
 
 @Data
 @AllArgsConstructor
-public class User implements Serializable {
+class ErrorMessage implements Serializable {
     @Setter(NONE)
-    private String userName;
+    private String message;
     @Setter(NONE)
-    private String token;
-    @Setter(NONE)
-    private boolean authenticated;
+    private String messageKey;
 }
-

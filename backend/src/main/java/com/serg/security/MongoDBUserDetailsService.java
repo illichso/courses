@@ -1,7 +1,7 @@
 package com.serg.security;
 
 import com.serg.dao.UserRepository;
-import com.serg.model.User;
+import com.serg.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +19,6 @@ public class MongoDBUserDetailsService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserDetails loadedUser;
@@ -31,8 +30,6 @@ public class MongoDBUserDetailsService implements UserDetailsService {
         }
         return loadedUser;
     }
-
-
 }
 
 
