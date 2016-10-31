@@ -72,7 +72,7 @@ jar.dependsOn(':frontend:assemble')
 task buildDocker(type: Docker) {
     baseImage = 'develar/java:latest'
     push = true
-    tag = 'illiches/serg-courses'
+    tag = 'serg/serg-courses'
     addFile {
         from jar
         rename {'app.jar'}

@@ -2,6 +2,9 @@
   "name": "courses",
   "version": "1.0.0",
   "description": "Full Stack project with Java, Spring Boot, MongoDB, Groovy, React, Redux, ES6",
+  "engines": {
+    "npm": ">=3"
+  },
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
