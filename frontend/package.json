@@ -23,6 +23,7 @@
   "author": "Sergii Illichevskyi",
   "license": "Apache-2.0",
   "dependencies": {
+    "axios": "0.15.2",
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
