@@ -14,12 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 
-//@RestController()
+@RestController()
 @RequestMapping("/api/session")
 public class AuthenticationResource {
+    private final AuthenticationManager authenticationManager;
+
     @Autowired
-    private
-    AuthenticationManager authenticationManager;
+    public AuthenticationResource(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public User login(@RequestBody Credentials credentials, HttpSession httpSession) {
