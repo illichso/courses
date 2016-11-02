@@ -10,6 +10,11 @@ import {
   emptyCourse} from './ManageCoursePage';
 import {durationPattern} from '../common/Validation';
 
+import jsdom from 'jsdom';
+const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
+global.document = doc;
+global.window = doc.defaultView;
+
 describe('Manage Course Page', () => {
   it('sets error message when trying to save course with empty fields', () => {
     const props = {

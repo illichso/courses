@@ -1,18 +1,9 @@
 import axios from 'axios';
 
 class AuthorApi {
-//const instance = axios.create({baseURL: 'http://localhost:8080'})
 
   static getAllAuthors() {
-//    return axios.get('/api/authors', {port: 8080});
-//    return axios.get('/api/authors');
-//    return axios.get('/api/authors',
-//      proxy: {
-//          host: 'localhost',
-//          port: 8080
-//        }
-//    );
-  return axios.get('http://localhost:8080/api/authors ');
+    return axios.get('/api/authors');
   }
 
   static save(author) {
