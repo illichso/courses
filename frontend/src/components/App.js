@@ -29,10 +29,13 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  const stateCoursesCount = state.courses ? (state.courses.length ? state.courses.length : 0) : 0;
+  const stateAuthorsCount = state.authors ? (state.authors.length ? state.authors.length : 0) : 0;
+
   return {
     loading: state.ajaxCallsInProgress > 0,
-    coursesCount : state.courses.length,
-    authorsCount : state.authors.length
+    coursesCount : stateCoursesCount,
+    authorsCount : stateAuthorsCount
   };
 };
 
