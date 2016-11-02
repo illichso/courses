@@ -5,6 +5,11 @@ plugins {
 apply plugin: 'base'
 version '0.0.1'
 
+clean.doFirst {
+    delete "${rootDir}/.gradle/"
+    println "deleted ${rootDir}/.gradle/"
+}
+
 node {
     version = '7.0.0'
     npmVersion = '3.10.9'
@@ -15,6 +20,5 @@ task runBuild(type: NodeTask) {
     args = ['run', 'build']
     ignoreExitValue = true
 }
-
 
 assemble.dependsOn(npm_run_build)
