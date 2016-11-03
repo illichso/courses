@@ -6,7 +6,7 @@ class CourseApi {
     return axios.get('/api/courses');
   }
 
-  static save(course) {
+  static saveCourse(course) {
     if(course.id) {
       return axios.put(`/api/courses/${course.id}`, course);
     } else {

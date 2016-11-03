@@ -6,7 +6,7 @@ class AuthorApi {
     return axios.get('/api/authors');
   }
 
-  static save(author) {
+  static saveAuthor(author) {
     if(author.id) {
       return axios.put(`/api/authors/${author.id}`, author);
     } else {
