@@ -6,11 +6,11 @@ class CourseApi {
     return axios.get('/api/courses');
   }
 
-  static save(author) {
-    if(author.id) {
-      return axios.put(`/api/courses/${author.id}`, author);
+  static save(course) {
+    if(course.id) {
+      return axios.put(`/api/courses/${course.id}`, course);
     } else {
-      return axios.post('/api/courses', author);
+      return axios.post('/api/courses', course);
     }
   }
 
