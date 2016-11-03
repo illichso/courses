@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
-@Document(collection = "course")
+@Document(collection = "courses")
 public class Course extends Model {
     private String title;
     private String watchHref;

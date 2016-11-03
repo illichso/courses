@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
-@Document(collection = "author")
+@Document(collection = "authors")
 public class Author extends Model {
     private String firstName;
     private String lastName;

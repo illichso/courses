@@ -2,9 +2,9 @@
 
 use courses;
 
-db.createCollection('course');
+db.createCollection('courses');
 
-db.course.insertMany
+db.courses.insertMany
 ([
   {
     id: "react-flux-building-applications",

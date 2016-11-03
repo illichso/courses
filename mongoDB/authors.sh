@@ -2,9 +2,9 @@
 
 use courses;
 
-db.createCollection('author');
+db.createCollection('authors');
 
-db.author.insertMany
+db.authors.insertMany
 ([
   {
     id: 'cory-house',
