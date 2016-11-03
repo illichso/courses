@@ -22,7 +22,7 @@ export const loadAuthors = () => {
   return dispatch => {
     dispatch(beginAjaxCall());
     return authorApi.getAllAuthors().then(authors => {
-      dispatch(loadAuthorsSuccess(authors));
+      dispatch(loadAuthorsSuccess(authors.data._embedded.authors));
     }).catch((error) => {
       console.log(error);
       throw(error);
