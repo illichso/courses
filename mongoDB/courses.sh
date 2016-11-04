@@ -7,7 +7,7 @@ db.createCollection('courses');
 db.courses.insertMany
 ([
   {
-    id: "react-flux-building-applications",
+    _id: "react-flux-building-applications",
     title: "Building Applications in React and Flux",
     watchHref: "http://www.pluralsight.com/courses/react-flux-building-applications",
     authorId: "cory-house",
@@ -15,7 +15,7 @@ db.courses.insertMany
     category: "JavaScript"
   },
   {
-    id: "clean-code",
+    _id: "clean-code",
     title: "Clean Code: Writing Code for Humans",
     watchHref: "http://www.pluralsight.com/courses/writing-clean-code-humans",
     authorId: "cory-house",
@@ -23,7 +23,7 @@ db.courses.insertMany
     category: "Software Practices"
   },
   {
-    id: "architecture",
+    _id: "architecture",
     title: "Architecting Applications for the Real World",
     watchHref: "http://www.pluralsight.com/courses/architecting-applications-dotnet",
     authorId: "cory-house",
@@ -31,7 +31,7 @@ db.courses.insertMany
     category: "Software Architecture"
   },
   {
-    id: "career-reboot-for-developer-mind",
+    _id: "career-reboot-for-developer-mind",
     title: "Becoming an Outlier: Reprogramming the Developer Mind",
     watchHref: "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
     authorId: "cory-house",
@@ -39,7 +39,7 @@ db.courses.insertMany
     category: "Career"
   },
   {
-    id: "web-components-shadow-dom",
+    _id: "web-components-shadow-dom",
     title: "Web Component Fundamentals",
     watchHref: "http://www.pluralsight.com/courses/web-components-shadow-dom",
     authorId: "cory-house",

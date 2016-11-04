@@ -7,17 +7,17 @@ db.createCollection('authors');
 db.authors.insertMany
 ([
   {
-    id: 'cory-house',
+    _id: 'cory-house',
     firstName: 'Cory',
     lastName: 'House'
   },
   {
-    id: 'scott-allen',
+    _id: 'scott-allen',
     firstName: 'Scott',
     lastName: 'Allen'
   },
   {
-    id: 'dan-wahlin',
+    _id: 'dan-wahlin',
     firstName: 'Dan',
     lastName: 'Wahlin'
   }
