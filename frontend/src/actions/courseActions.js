@@ -22,7 +22,8 @@ export const loadCourses = () => {
   return dispatch => {
     dispatch(beginAjaxCall());
     return courseApi.getAllCourses().then(courses => {
-      dispatch(loadCoursesSuccess(courses.data._embedded.courses));
+      const extractedCourses = courses.data._embedded.courses;
+      dispatch(loadCoursesSuccess(extractedCourses));
     }).catch(error => {
       console.log(error);
       throw(error);
@@ -34,8 +35,9 @@ export const saveCourse = course => {
   return (dispatch, getState) => {
     dispatch(beginAjaxCall());
     return courseApi.saveCourse(course).then(savedCourse => {
-      course.id ? dispatch(updateCourseSuccess(savedCourse.data)) :
-      dispatch(createCourseSuccess(savedCourse.data));
+      const extractedCourse = savedCourse.data;
+      course.id ? dispatch(updateCourseSuccess(extractedCourse)) :
+      dispatch(createCourseSuccess(extractedCourse));
     }).catch(error => {
       dispatch(ajaxCallError(error));
       console.log(error);
