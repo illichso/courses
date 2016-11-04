@@ -1,4 +1,5 @@
 import * as types from './actionTypes';
+import {extractEmbeddedCourse, extractEmbeddedCourseList} from './HALExtractor';
 import courseApi from '../api/courseApi';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
@@ -22,7 +23,7 @@ export const loadCourses = () => {
   return dispatch => {
     dispatch(beginAjaxCall());
     return courseApi.getAllCourses().then(courses => {
-      const extractedCourses = courses.data._embedded.courses;
+      const extractedCourses = extractEmbeddedCourseList(courses);
       dispatch(loadCoursesSuccess(extractedCourses));
     }).catch(error => {
       console.log(error);
@@ -35,7 +36,7 @@ export const saveCourse = course => {
   return (dispatch, getState) => {
     dispatch(beginAjaxCall());
     return courseApi.saveCourse(course).then(savedCourse => {
-      const extractedCourse = savedCourse.data;
+      const extractedCourse = extractEmbeddedCourse(savedCourse);
       course.id ? dispatch(updateCourseSuccess(extractedCourse)) :
       dispatch(createCourseSuccess(extractedCourse));
     }).catch(error => {
