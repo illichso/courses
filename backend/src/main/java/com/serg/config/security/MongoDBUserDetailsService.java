@@ -1,4 +1,4 @@
-package com.serg.security;
+package com.serg.config.security;
 
 import com.serg.dao.UserRepository;
 import com.serg.entities.User;

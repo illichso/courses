@@ -1,6 +1,6 @@
-package com.serg.config.rest;
+package com.serg.config.security;
 
-import com.serg.security.MongoDBUserDetailsService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;

@@ -1,4 +1,4 @@
-package com.serg.config.rest;
+package com.serg.config.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;

@@ -8,7 +8,7 @@ import static lombok.AccessLevel.NONE;
 
 @Data
 @AllArgsConstructor
-class ErrorMessage implements Serializable {
+public class ErrorMessage implements Serializable {
     @Setter(NONE)
     private String message;
     @Setter(NONE)

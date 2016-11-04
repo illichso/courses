@@ -1,8 +1,9 @@
-package com.serg.config.rest;
+package com.serg.rest;
 
 import com.serg.entities.Author;
 import com.serg.entities.Course;
 import com.serg.entities.User;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
@@ -15,5 +16,10 @@ public class RestMvcConfig extends RepositoryRestConfigurerAdapter {
         config.exposeIdsFor(User.class);
         config.setBasePath("/api");
         config.setReturnBodyForPutAndPost(true);
+    }
+
+    @Bean
+    CourseEventHandler postEventHandler() {
+        return new CourseEventHandler();
     }
 }
