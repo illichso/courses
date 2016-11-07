@@ -1,4 +1,4 @@
-package com.serg.rest;
+package com.serg.service;
 
 import com.ibm.icu.text.Transliterator;
 import org.springframework.context.annotation.Bean;

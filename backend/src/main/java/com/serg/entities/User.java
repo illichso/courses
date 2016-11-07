@@ -9,6 +9,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.List;
 
+import static java.lang.String.valueOf;
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
@@ -18,4 +20,9 @@ public class User extends Model {
     @JsonIgnore
     private String password;
     private List<SimpleGrantedAuthority> roles;
+
+    @Override
+    public String getUniqueField() {
+        return valueOf(getUsername());
+    }
 }

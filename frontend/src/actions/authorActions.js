@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import authorApi from '../api/authorApi';
+import {extractEmbeddedAuthor, extractEmbeddedAuthorList} from './HALExtractor';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 export const loadAuthorsSuccess = authors => {
@@ -22,7 +23,8 @@ export const loadAuthors = () => {
   return dispatch => {
     dispatch(beginAjaxCall());
     return authorApi.getAllAuthors().then(authors => {
-      dispatch(loadAuthorsSuccess(authors.data._embedded.authors));
+      const extractedAuthors = extractEmbeddedAuthorList(authors);
+      dispatch(loadAuthorsSuccess(extractedAuthors));
     }).catch((error) => {
       console.log(error);
       throw(error);
@@ -34,8 +36,9 @@ export const saveAuthor = author => {
   return (dispatch, getState) => {
     dispatch(beginAjaxCall());
     return authorApi.saveAuthor(author).then(savedAuthor => {
-      author.id ? dispatch(updateAuthorSuccess(savedAuthor)) :
-      dispatch(createAuthorSuccess(savedAuthor));
+      const extractedAuthor = extractEmbeddedAuthor(savedAuthor);
+      author.id ? dispatch(updateAuthorSuccess(extractedAuthor)) :
+      dispatch(createAuthorSuccess(extractedAuthor));
     }).catch(error => {
       console.log(error);
       dispatch(ajaxCallError(error));

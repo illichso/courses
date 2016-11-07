@@ -15,7 +15,8 @@ class AuthorApi {
   }
 
   static deleteAuthor(authorId) {
-    return axios.put(`/api/authors/${authorId}`, {});
+    // return axios.put(`/api/authors/${authorId}`, {});
+    return axios.delete(`/api/authors/${authorId}`);
   }
 }
 

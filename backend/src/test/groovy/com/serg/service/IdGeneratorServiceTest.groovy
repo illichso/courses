@@ -2,17 +2,16 @@ package com.serg.service
 
 import com.serg.AbstractMvcSpec
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.context.WebApplicationContext
 
-class CourseServiceTest extends AbstractMvcSpec {
+class IdGeneratorServiceTest extends AbstractMvcSpec {
     @Autowired
-    private CourseService courseService
+    private IdGeneratorService courseService
 
     def "check course id constructor"() {
         given:
         def title = "{}"
         when:
-        def generatedId = courseService.generateIdFromTheTitle(title)
+        def generatedId = courseService.generateIdFromString(title)
 
         then:
         generatedId =="{}"

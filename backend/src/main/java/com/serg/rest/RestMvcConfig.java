@@ -19,7 +19,8 @@ public class RestMvcConfig extends RepositoryRestConfigurerAdapter {
     }
 
     @Bean
-    CourseEventHandler postEventHandler() {
-        return new CourseEventHandler();
+    public EventHandler eventHandler() {
+        return new EventHandler();
     }
+
 }
