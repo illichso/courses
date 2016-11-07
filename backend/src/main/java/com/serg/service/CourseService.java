@@ -17,7 +17,8 @@ public class CourseService {
 
     public String generateIdFromTheTitle(String title) {
         return cyrillicTransliterator.transform(valueOf(title)) //Transforms cyrillic to latin
-                .replaceAll("[^a-zA-Z0-9]", " ") //Filters all special symbols making them spaces
+//                .replaceAll("[^a-zA-Z0-9]", " ") //Filters all special symbols making them spaces
+                .replaceAll("\\\\.[]]*+-^$|\\'\\\"\\{\\}", " ") //Filters all special symbols making them spaces
                 .trim()
                 .replaceAll("\\s+", " ") //Replace all multispaces with single
                 .replace(' ', '-') //Make them dashes and lowercase forming correct ID
