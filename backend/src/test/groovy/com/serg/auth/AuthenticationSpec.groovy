@@ -1,6 +1,6 @@
 package com.serg.auth
 
-import com.serg.service.AbstractMvcSpec
+import com.serg.AbstractMvcSpec
 import org.springframework.http.HttpStatus
 import org.springframework.security.test.context.support.WithMockUser
 

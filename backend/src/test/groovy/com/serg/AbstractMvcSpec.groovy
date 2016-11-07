@@ -1,4 +1,4 @@
-package com.serg.service
+package com.serg
 
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers
