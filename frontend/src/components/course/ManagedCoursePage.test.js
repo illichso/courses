@@ -6,14 +6,12 @@ import {
   titleErrorMsg,
   authorErrorMsg,
   categoryErrorMsg,
-  lengthErrorMsg,
-  emptyCourse} from './ManageCoursePage';
+  lengthErrorMsg} from './ManageCoursePage';
 import {durationPattern} from '../common/Validation';
+import {emptyCourse} from '../../constants/emptyEntities';
+import {globalDocumentWindowConfig} from '../../test/jsdomConfig';
 
-import jsdom from 'jsdom';
-const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
-global.document = doc;
-global.window = doc.defaultView;
+globalDocumentWindowConfig();
 
 describe('Manage Course Page', () => {
   it('sets error message when trying to save course with empty fields', () => {

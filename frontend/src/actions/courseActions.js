@@ -33,7 +33,7 @@ export const loadCourses = () => {
 };
 
 export const saveCourse = course => {
-  return (dispatch, getState) => {
+  return dispatch => {
     dispatch(beginAjaxCall());
     return courseApi.saveCourse(course).then(savedCourse => {
       const extractedCourse = extractEmbeddedCourse(savedCourse);

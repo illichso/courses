@@ -1,5 +1,5 @@
 import * as types from '../actions/actionTypes';
-import initialState from './initialState';
+import initialState from '../constants/initialState';
 
 const actionTypesEndsInSuccess = type => {
   return type.substring(type.length - 8) == '_SUCCESS';

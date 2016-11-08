@@ -33,7 +33,7 @@ export const loadAuthors = () => {
 };
 
 export const saveAuthor = author => {
-  return (dispatch, getState) => {
+  return dispatch => {
     dispatch(beginAjaxCall());
     return authorApi.saveAuthor(author).then(savedAuthor => {
       const extractedAuthor = extractEmbeddedAuthor(savedAuthor);

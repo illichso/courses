@@ -4,13 +4,10 @@ import {mount, shallow} from 'enzyme';
 import {
   ManageAuthorPage,
   firstNameErrorMsg,
-  lastNameErrorMsg,
-  emptyAuthor} from './ManageAuthorPage';
+  lastNameErrorMsg} from './ManageAuthorPage';
+import {emptyAuthor} from '../../constants/emptyEntities';
+import {globalDocumentWindowConfig} from '../../test/jsdomConfig';
 
-import jsdom from 'jsdom';
-const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
-global.document = doc;
-global.window = doc.defaultView;
 
 // describe('Manage Author Page', () => {
 //   it('sets error message when trying to save author with empty fields', () => {

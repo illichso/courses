@@ -7,10 +7,11 @@ import AuthorForm  from './AuthorForm';
 import toastr from 'toastr';
 import {getById, getFullAuthorName} from '../../selectors/selectors';
 import {minimumLength} from '../common/Validation';
+import {emptyAuthor} from '../../constants/emptyEntities';
 
 export const firstNameErrorMsg = 'Author should have a first name.';
 export const lastNameErrorMsg = 'Author should have a last name.';
-export const emptyAuthor = {id: '', firstName: '', lastName: ''};
+
 
 export class ManageAuthorPage extends Component {
   constructor(props, context){

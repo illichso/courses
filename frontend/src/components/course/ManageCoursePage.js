@@ -7,12 +7,12 @@ import CourseForm  from './CourseForm';
 import {getById, authorsFormattedForDropdown} from '../../selectors/selectors';
 import toastr from 'toastr';
 import {minimumLength, durationPattern} from '../common/Validation';
+import {emptyCourse} from '../../constants/emptyEntities';
 
 export const titleErrorMsg = 'Course should have a title.';
 export const authorErrorMsg = 'Course should have an author.';
 export const categoryErrorMsg = 'Course should have a category.';
 export const lengthErrorMsg = 'Course should have a valid length with pattern HH:MM:SS';
-export const emptyCourse = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
 
 export class ManageCoursePage extends Component {
   constructor(props, context){

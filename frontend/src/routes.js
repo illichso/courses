@@ -7,19 +7,23 @@ import AuthorsPage from './components/author/AuthorsPage';
 import CoursesPage from './components/course/CoursesPage';
 import ManageAuthorPage from './components/author/ManageAuthorPage';
 import ManageCoursePage from './components/course/ManageCoursePage';
+import LoginPage from "./components/login/LoginPage";
+import { UserIsAuthenticated , UserIsNotAuthenticated } from './accessors/accessors';
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage}/>
 
-    <Route path="authors" component={AuthorsPage}/>
-    <Route path="author" component={ManageAuthorPage}/>
-    <Route path="author/:id" component={ManageAuthorPage}/>
+    <Route path="authors" component={UserIsAuthenticated(AuthorsPage)}/>
+    <Route path="author" component={UserIsAuthenticated(ManageAuthorPage)}/>
+    <Route path="author/:id" component={UserIsAuthenticated(ManageAuthorPage)}/>
 
-    <Route path="courses" component={CoursesPage}/>
-    <Route path="course" component={ManageCoursePage}/>
-    <Route path="course/:id" component={ManageCoursePage}/>
+    <Route path="courses" component={UserIsAuthenticated(CoursesPage)}/>
+    <Route path="course" component={UserIsAuthenticated(ManageCoursePage)}/>
+    <Route path="course/:id" component={UserIsAuthenticated(ManageCoursePage)}/>
 
-    <Route path="about" component={AboutPage}/>
+    <Route path="about" component={UserIsAuthenticated(AboutPage)}/>
+
+    <Route path="/login" component={UserIsNotAuthenticated(LoginPage)}/>
   </Route>
 );
