@@ -13,9 +13,7 @@ import org.springframework.web.context.WebApplicationContext
 import spock.lang.Shared
 import spockmvc.SpockMvcSpec
 
-@ContextConfiguration // not mentioned by docs, but had to include this for Spock to startup the Spring context
 @SpringBootTest
-@WebAppConfiguration
 abstract class AbstractMvcSpec extends SpockMvcSpec {
 
     @Shared

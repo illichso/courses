@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.4.+'
+        springBootVersion = '1.4.1.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -48,9 +48,10 @@ dependencies {
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.springframework.security:spring-security-test'
-    testCompile 'org.spockframework:spock-spring'
     testCompile 'com.geowarin:spring-spock-mvc:0.2.1'
     testCompile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:1.50.3'
+    testCompile('org.spockframework:spock-core:1.1-groovy-2.4-rc-2')
+    testCompile('org.spockframework:spock-spring:1.1-groovy-2.4-rc-2')
 }
 
 eclipse {
