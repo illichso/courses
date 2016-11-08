@@ -10,7 +10,7 @@ import static lombok.AccessLevel.NONE;
 
 @Data
 @AllArgsConstructor
-public class User implements Serializable {
+public class LoginUser implements Serializable {
     @Setter(NONE)
     private String userName;
     @Setter(NONE)

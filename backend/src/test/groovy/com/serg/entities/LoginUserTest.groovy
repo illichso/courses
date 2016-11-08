@@ -2,7 +2,7 @@ package com.serg.entities
 
 import spock.lang.Specification
 
-class UserTest extends Specification{
+class LoginUserTest extends Specification{
 
     def "check user constructor"() {
         given:
