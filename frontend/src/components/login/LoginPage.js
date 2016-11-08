@@ -1,11 +1,11 @@
-import React, {PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 import toastr from 'toastr';
 import {connect} from "react-redux";
 import {bindActionCreators} from 'redux';
 import * as authenticationActions from "../../actions/authenticationActions";
 import LoginForm from './LoginForm';
 
-class LoginPage extends React.Component {
+class LoginPage extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -31,6 +31,14 @@ class LoginPage extends React.Component {
     this.props.actions.login(login, password).then(() => {
       // redirectAfterSuccess(getState);
       toastr.success("Login success!");
+    }).catch(error => toastr.error(error));
+  }
+
+  onLogout(event) {
+    event.preventDefault();
+    this.props.actions.logout().then(() => {
+      // redirectAfterSuccess(getState);
+      toastr.success("Logout success!");
     }).catch(error => toastr.error(error));
   }
 

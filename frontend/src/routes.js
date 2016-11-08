@@ -8,6 +8,7 @@ import CoursesPage from './components/course/CoursesPage';
 import ManageAuthorPage from './components/author/ManageAuthorPage';
 import ManageCoursePage from './components/course/ManageCoursePage';
 import LoginPage from "./components/login/LoginPage";
+import LogoutPage from "./components/login/LogoutPage";
 import { UserIsAuthenticated , UserIsNotAuthenticated } from './accessors/accessors';
 
 export default (
@@ -25,5 +26,6 @@ export default (
     <Route path="about" component={UserIsAuthenticated(AboutPage)}/>
 
     <Route path="/login" component={UserIsNotAuthenticated(LoginPage)}/>
+    <Route path="/logout" component={UserIsNotAuthenticated(LogoutPage)}/>
   </Route>
 );
