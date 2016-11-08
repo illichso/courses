@@ -1,5 +1,6 @@
 import React, {PropTypes} from "react";
 import TextInput from '../common/TextInput';
+import PasswordInput from '../common/PasswordInput';
 
 const LoginForm = ({credentials, onChange, onLogin}) => {
   return (
@@ -13,7 +14,7 @@ const LoginForm = ({credentials, onChange, onLogin}) => {
         onChange={onChange}
       />
 
-      <TextInput
+      <PasswordInput
         type="password"
         name="password"
         label="Password"
