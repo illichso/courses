@@ -5,6 +5,5 @@ jdk:
 before_script:
   - chmod +x ./gradlew
   - chmod +x ./gradlew.bat
-  - gradle clean install
 script:
-  - gradle clean test
+  - gradle test
