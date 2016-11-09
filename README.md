@@ -1,8 +1,6 @@
-[![Build Status](https://travis-ci.org/illichso/courses.png)](https://travis-ci.org/illichso/courses)
+[![Build Status on UN*X](https://travis-ci.org/illichso/courses.png)](https://travis-ci.org/illichso/courses)
+[![Build Status on Windows](https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true)](https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true)
 [![Coverage Status](https://coveralls.io/repos/illichso/courses/badge.png?branch=master)](https://coveralls.io/r/illichso/courses?branch=master)
-
-image:https://ci.appveyor.com/api/projects/status/github/courses?branch=master&svg=true](https://ci.appveyor.com/api/projects/status/github/courses?branch=master&svg=true)
-image:https://ci.appveyor.com/api/projects/status/y3uw0gpo9dtec349?svg=true[link="https://ci.appveyor.com/project/illichso/courses"] 
 
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
