@@ -1,9 +1,14 @@
-language: java
-sudo: required
-jdk:
-  - oraclejdk8
-before_script:
-  - chmod +x ./gradlew
-  - chmod +x ./gradlew.bat
-script:
+version: 1.0.{build}
+build:
+  verbosity: detailed
+
+build_script:
+  - ./gradlew assemble
+
+test_script:
   - gradle test
+
+branches:
+  only:
+    - master
+
