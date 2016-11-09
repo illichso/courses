@@ -29,7 +29,7 @@ notifications:
 - provider: Email
   to:
   - x@gmail.com
-  subject: 'Build failed: react-slingshot'
+  subject: 'Build failed: courses/frontend'
   message: The continuous integration build failed.
   on_build_success: false
   on_build_failure: true
