@@ -1,2 +1,9 @@
+language: groovy
+groovy:
+  - 2.4.7
+gradle:
+  - 3.1
+before_script:
+  - gradle clean install
 script:
-  - gradle test
+  - gradle clean test
