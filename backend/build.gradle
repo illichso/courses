@@ -84,4 +84,8 @@ task buildDocker(type: Docker) {
 
 buildDocker.dependsOn(build)
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}
+
 
