@@ -12,7 +12,7 @@ For development:
 2. gradle bootRun
 3. in separate console window: cd frontend && npm start -s
 ```
-
+Or: 
 ```
 gradle bootRun
 gradle npm_install //only on first run, or when package.json dependencies changed
