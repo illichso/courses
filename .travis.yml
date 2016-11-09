@@ -1,4 +1,5 @@
 language: java, node_js
+sudo: required
 jdk:
   - oraclejdk8
 node_js:
