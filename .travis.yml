@@ -1,2 +1,10 @@
-language: java
-./gradlew check
+language: java, node_js
+jdk:
+  - oraclejdk8
+node_js:
+  - "7"
+  - "6"
+  - "5"
+  - "4"
+script:
+  - gradle clean build

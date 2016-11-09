@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/illichso/courses.png)](https://travis-ci.org/illichso/courses)
+[![Coverage Status](https://coveralls.io/repos/illichso/courses/badge.png?branch=master)](https://coveralls.io/r/illichso/courses?branch=master)
+
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
 ## What I need to run it in dev mode?
