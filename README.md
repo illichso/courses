@@ -1,4 +1,7 @@
 [![Build Status on UN*X](https://travis-ci.org/illichso/courses.png)](https://travis-ci.org/illichso/courses)
+https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v
+<img src="https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true" alt="Project Badge" width="300">
+<img src="https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true&passingText=master%20-%20OK" alt="Project Badge">
 [![Build Status on Windows](https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true)](https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true)
 [![Coverage Status](https://coveralls.io/repos/illichso/courses/badge.png?branch=master)](https://coveralls.io/r/illichso/courses?branch=master)
 
