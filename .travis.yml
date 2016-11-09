@@ -1,11 +1,15 @@
-language: java, node_js
+language: java
 sudo: required
 jdk:
   - oraclejdk8
-node_js:
-  - "7"
-  - "6"
-  - "5"
-  - "4"
+before_install:
+  - java -version
+  - gradle -v
+  - apt-get install curl
+  - curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+  - sudo apt-get install -y nodejs
+  - node -v
+  - sudo npm install npm@3.10.9 -g
+  - npm -v
 script:
-  - gradle clean build
+  - gradle test
