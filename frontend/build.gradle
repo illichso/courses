@@ -7,11 +7,14 @@ version '0.0.1'
 
 clean.doFirst {
     delete "${rootDir}/.gradle/"
-    println "deleted ${rootDir}/.gradle/"
+    println "deleted ${rootDir}\\.gradle\\"
+
+    delete "${rootDir}/frontend/.gradle/"
+    println "deleted ${rootDir}\\frontend\\.gradle\\"
 }
 
 node {
-    version = '7.0.0'
+    version = '7.1.0'
     npmVersion = '3.10.9'
     download = true
 }

@@ -1,10 +1,17 @@
-# Java + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6
+# Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
 ## What I need to run it in dev mode?
 Install Gradle 3.1  
-Install Node 7.0.0
+Install Node 7.1.0
 
 Run:
+
+```
+For development:
+1. gradle clean build
+2. gradle bootRun
+3. in separate console window: cd frontend && npm start -s
+```
 
 ```
 gradle bootRun
@@ -24,13 +31,13 @@ gradle clean assemble
 cd course-backend/build/libs
 java -jar project-template-0.0.1-SNAPSHOT.jar
 ```
-It will 
+It will
  1. Compile java/groovy classes  
  2. will install npm/node if not installed.
  3. Create minified and compressed js, css, html bundle to /dist folder in "project-template-frontend". Using Webpack
  4. Copy these files to the "/static" folder in jar
  5. ??? PROFIT! Just run the jar with `java -jar nameOfTheBuild.jar`  and app is deployed
- 
+
 ##How to develop frontend?
 Just run backend as separate service any way you like or  `gradle bootRun`, and proxy all calls to `/api` in browsersync server to `localhost:8080`,
 or just use some mockApi and run:
@@ -48,7 +55,7 @@ Just run:
 npm run test:watch
 ```
 ### Not happy yet? Want to debug it step by step in the IDEA/WebStorm?  
-For IDEA: 
+For IDEA:
  1. Install node plugin.
  2. Go to the run configurations
  3. Create new Mocha test configuration and set it up this way (bellow)
@@ -62,4 +69,3 @@ Extra Mocha options: tools/testSetup.js
 Select: Test file
 Choose test file of your choice to test it within IDEA/WebStorm
 ```
-
