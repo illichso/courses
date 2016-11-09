@@ -4,7 +4,7 @@ groovy:
 gradle:
   - 3.1
 before_script:
-  - chmod +x gradlew
+  - chmod +x ./gradlew
   - gradle clean install
 script:
   - gradle clean test
