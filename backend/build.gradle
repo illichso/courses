@@ -1,62 +1,16 @@
-buildscript {
-    ext {
-        springBootVersion = '1.4.1.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath "se.transmode.gradle:gradle-docker:1.2"
-    }
-}
-
-
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'idea'
-apply plugin: 'spring-boot'
-apply plugin: 'eclipse'
-apply plugin: 'docker'
-apply plugin: 'jacoco'
-
-jacoco {
-    toolVersion = "0.7.6.201602180812"
-    reportsDir = file("$buildDir/customJacocoReportDir")
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-    }
-}
-
-jar {
-    baseName = 'courses'
-    version = '0.0.1-SNAPSHOT'
-}
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-    jcenter()
-}
-
 dependencies {
     compile 'org.springframework.boot:spring-boot-devtools'
     compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.codehaus.groovy:groovy'
-
     compile 'org.springframework.boot:spring-boot-starter-security'
     compile 'org.springframework.session:spring-session'
     compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
     compile 'org.springframework.boot:spring-boot-starter-data-rest'
     compile 'org.springframework.data:spring-data-rest-hal-browser'
-    compile 'org.projectlombok:lombok'
-    compile 'com.ibm.icu:icu4j:57.1'
 
     compile 'org.apache.commons:commons-lang3:+'
+    compile 'org.codehaus.groovy:groovy'
+    compile 'org.projectlombok:lombok'
+    compile 'com.ibm.icu:icu4j:57.1'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.springframework.security:spring-security-test'
@@ -65,39 +19,3 @@ dependencies {
     testCompile('org.spockframework:spock-core:1.1-groovy-2.4-rc-2')
     testCompile('org.spockframework:spock-spring:1.1-groovy-2.4-rc-2')
 }
-
-eclipse {
-    classpath {
-        containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-        containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
-    }
-}
-
-
-jar {
-    from('../frontend/dist') {
-        into 'static'
-    }
-}
-
-jar.dependsOn(':frontend:assemble')
-
-task buildDocker(type: Docker) {
-    baseImage = 'develar/java:latest'
-    push = true
-    tag = 'serg/serg-courses'
-    addFile {
-        from jar
-        rename {'app.jar'}
-    }
-    entryPoint(['java', '-Djava.security.egd=file:/dev/./urandom', '-jar', '/app.jar'])
-    exposePort(8080)
-}
-
-buildDocker.dependsOn(build)
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.1'
-}
-
-

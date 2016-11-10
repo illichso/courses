@@ -1,0 +1,104 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "se.transmode.gradle:gradle-docker:1.2"
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    apply plugin: 'spring-boot'
+    apply plugin: 'docker'
+    apply plugin: 'jacoco'
+    apply plugin: 'application'
+    mainClassName = 'com.serg.Application'
+
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        maven { url "http://repo1.maven.org/maven2/" }
+    }
+}
+
+//subprojects {
+//
+//    run {
+//        main = project.getProperty('mainClassName')
+//    }
+//
+//    test.useJUnit()
+//}
+
+jar {
+
+    from('../frontend/dist') {
+        into 'static'
+    }
+    from('../backend/build') {
+        into 'build'
+    }
+    baseName = 'courses'
+    version = '0.0.1-SNAPSHOT'
+}
+
+jar.dependsOn(':frontend:assemble')
+jar.dependsOn(':backend:assemble')
+
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+
+    reports {
+        xml.enabled true
+        xml.destination "${buildDir}/reports/jacoco/report.xml"
+
+
+        html.enabled true
+        html.destination "${buildDir}/reports/jacoco/report.html"
+
+        csv.enabled true
+        csv.destination "${buildDir}/reports/jacoco/report.csv"
+    }
+}
+
+codeCoverageReport.dependsOn {
+    subprojects*.test
+}
+
+
+
+
+task buildDocker(type: Docker) {
+    baseImage = 'develar/java:latest'
+    push = true
+    tag = 'serg/serg-courses'
+    addFile {
+        from jar
+        rename {'app.jar'}
+    }
+    entryPoint(['java', '-Djava.security.egd=file:/dev/./urandom', '-jar', '/app.jar'])
+    exposePort(8080)
+}
+
+buildDocker.dependsOn(build)
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}
+
+

@@ -62,5 +62,7 @@ dist
 
 #Patches
 patches/
-backend/gradle/
-backend/build/
+/backend/gradle/
+/backend/build/
+/frontend/build/
+
