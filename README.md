@@ -15,6 +15,18 @@ https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v
 [2]: https://travis-ci.org/illichso/courses
 
 
+## Build Status
+
+| windows-vs-x86            | linux-gcc-x86_64            | osx-clang-x86               |
+|---------------------------|-----------------------------|-----------------------------|
+| [![windows-vs-x86][1]][2] | [![linux-gcc-x86_64][3]][4] | [![osx-clang-x86][3]][4]
+
+[1]: https://ci.appveyor.com/api/projects/status/5o9gxjcttuaup671/branch/master?svg=true
+[2]: https://ci.appveyor.com/project/tritao/CppSharp/branch/master
+[3]: https://travis-ci.org/mono/CppSharp.svg?branch=master
+[4]: https://travis-ci.org/mono/CppSharp
+
+
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
 ## What I need to run it in dev mode?
