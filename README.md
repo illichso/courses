@@ -14,8 +14,8 @@ https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v
 
 [1]: https://travis-ci.org/illichso/courses.svg?branch=master
 [2]: https://travis-ci.org/illichso/courses
-[3]: https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true
-[4]: https://ci.appveyor.com/project/illichso/courses
+[3]: https://ci.appveyor.com/api/projects/status/57lmmhfrdryko12v/branch/master?svg=true
+[4]: https://ci.appveyor.com/project/illichso/courses/branch/master
 
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
