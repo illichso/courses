@@ -5,6 +5,16 @@ https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v
 [![Build Status on Windows](https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true)](https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true)
 [![Coverage Status](https://coveralls.io/repos/illichso/courses/badge.png?branch=master)](https://coveralls.io/r/illichso/courses?branch=master)
 
+## Build Status
+
+| windows-vs-x86            | linux-gcc-x86_64            | 
+|---------------------------|-----------------------------|
+| [![windows-vs-x86][1]]    | [![linux-gcc-x86_64][2]     |
+
+[1]: https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true
+[2]: https://travis-ci.org/illichso/courses
+
+
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
 ## What I need to run it in dev mode?
