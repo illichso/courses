@@ -18,6 +18,13 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'eclipse'
 apply plugin: 'docker'
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
 
 jar {
     baseName = 'courses'
