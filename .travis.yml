@@ -20,4 +20,4 @@ before_script:
   - chmod +x ./gradlew.bat
 
 script:
-  - gradle test
+  - ./gradlew test

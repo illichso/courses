@@ -61,4 +61,6 @@ dist
 .vscode
 
 #Patches
-/patches/
+patches/
+backend/gradle/
+backend/build/
