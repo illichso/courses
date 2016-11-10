@@ -9,23 +9,10 @@
 [3]: https://ci.appveyor.com/api/projects/status/57lmmhfrdryko12v/branch/master?svg=true
 [4]: https://ci.appveyor.com/project/illichso/courses/branch/master
 
-[![codecov](https://codecov.io/gh/illichso/courses/branch/master/graph/badge.svg)](https://codecov.io/gh/illichso/courses)
+[![Codecov Status](https://codecov.io/gh/illichso/courses/branch/master/graph/badge.svg)](https://codecov.io/gh/illichso/courses)
 
-MARKDOWN
-[![Coverage Status](https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master)](https://coveralls.io/github/illichso/courses?branch=master)
+[![Coveralls Status](https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master)](https://coveralls.io/github/illichso/courses?branch=master)
 
-TEXTILE
-!https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master(Coverage Status)!:https://coveralls.io/github/illichso/courses?branch=master
-
-RDOC
-{<img src="https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/illichso/courses?branch=master]
-
-HTML
-<a href='https://coveralls.io/github/illichso/courses?branch=master'><img src='https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master' alt='Coverage Status' /></a>
-
-RST
-.. image:: https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master
-:target: https://coveralls.io/github/illichso/courses?branch=master
 
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
