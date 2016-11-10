@@ -1,21 +1,29 @@
-[![Build Status on UN*X](https://travis-ci.org/illichso/courses.png)](https://travis-ci.org/illichso/courses)
-https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v
-<img src="https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true" alt="Project Badge" width="300">
-<img src="https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true&passingText=master%20-%20OK" alt="Project Badge">
-[![Build Status on Windows](https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true)](https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true)
-[![Coverage Status](https://coveralls.io/repos/illichso/courses/badge.png?branch=master)](https://coveralls.io/r/illichso/courses?branch=master)
-
 ## Build Status
 
 | Linux-x86_64            | macOS-x86_64             | Windows-x86_64            |
 |-------------------------|--------------------------|---------------------------|
 | [![Linux-86_64][1]][2]  | [![macOS-x86_64][1]][2]  | [![Windows-x86_64][3]][4] 
 
-
 [1]: https://travis-ci.org/illichso/courses.svg?branch=master
 [2]: https://travis-ci.org/illichso/courses
 [3]: https://ci.appveyor.com/api/projects/status/57lmmhfrdryko12v/branch/master?svg=true
 [4]: https://ci.appveyor.com/project/illichso/courses/branch/master
+
+MARKDOWN
+[![Coverage Status](https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master)](https://coveralls.io/github/illichso/courses?branch=master)
+
+TEXTILE
+!https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master(Coverage Status)!:https://coveralls.io/github/illichso/courses?branch=master
+
+RDOC
+{<img src="https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/illichso/courses?branch=master]
+
+HTML
+<a href='https://coveralls.io/github/illichso/courses?branch=master'><img src='https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master' alt='Coverage Status' /></a>
+
+RST
+.. image:: https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master
+:target: https://coveralls.io/github/illichso/courses?branch=master
 
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
