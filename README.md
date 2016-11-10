@@ -7,13 +7,14 @@ https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v
 
 ## Build Status
 
-| windows-vs-x86            | linux-gcc-x86_64            | 
-|---------------------------|-----------------------------|
-| [![windows-vs-x86][1]]    | [![linux-gcc-x86_64][2]     |
+| windows-vs-x86            | linux-gcc-x86_64            | osx-clang-x86               |
+|---------------------------|-----------------------------|-----------------------------|
+| [![windows-vs-x86][1]][2] | [![linux-gcc-x86_64][3]][4] | [![osx-clang-x86][3]][4]
 
 [1]: https://ci.appveyor.com/api/github/webhook?id=57lmmhfrdryko12v?svg=true
-[2]: https://travis-ci.org/illichso/courses
-
+[2]: https://ci.appveyor.com/project/illichso/courses
+[3]: https://travis-ci.org/illichso/courses.svg?branch=master
+[4]: https://travis-ci.org/illichso/courses
 
 ## Build Status
 
