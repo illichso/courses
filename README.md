@@ -30,9 +30,9 @@ For development:
 ```
 Or: 
 ```
-gradle bootRun
-gradle npm_install //only on first run, or when package.json dependencies changed
-gradle npm_start
+1. gradle bootRun
+2. gradle npm_install //only on first run, or when package.json dependencies changed
+3. gradle npm_start
 ```
 Or (Recommended):  
 Run main method in `Application.java` using IDE of your choice. And then go to frontent module and run
@@ -40,19 +40,26 @@ Run main method in `Application.java` using IDE of your choice. And then go to f
 npm start -s
 ```
 
+## How to run docker-compose?
+Run:
+
+1. docker-compose up -d
+2. ./run_tests
+3. docker-compose down
+
 ## How to build for production and run?
 Run:
 ```
-gradle clean assemble
-cd course-backend/build/libs
-java -jar project-template-0.0.1-SNAPSHOT.jar
+1. gradle clean assemble
+2. cd course-backend/build/libs
+3. java -jar project-template-0.0.1-SNAPSHOT.jar
 ```
 It will
- 1. Compile java/groovy classes  
- 2. will install npm/node if not installed.
- 3. Create minified and compressed js, css, html bundle to /dist folder in "project-template-frontend". Using Webpack
- 4. Copy these files to the "/static" folder in jar
- 5. ??? PROFIT! Just run the jar with `java -jar nameOfTheBuild.jar`  and app is deployed
+1. Compile java/groovy classes  
+2. will install npm/node if not installed.
+3. Create minified and compressed js, css, html bundle to /dist folder in "project-template-frontend". Using Webpack
+4. Copy these files to the "/static" folder in jar
+5. ??? PROFIT! Just run the jar with `java -jar nameOfTheBuild.jar`  and app is deployed
 
 ##How to develop frontend?
 Just run backend as separate service any way you like or  `gradle bootRun`, and proxy all calls to `/api` in browsersync server to `localhost:8080`,
@@ -72,10 +79,10 @@ npm run test:watch
 ```
 ### Not happy yet? Want to debug it step by step in the IDEA/WebStorm?  
 For IDEA:
- 1. Install node plugin.
- 2. Go to the run configurations
- 3. Create new Mocha test configuration and set it up this way (bellow)
- 4. PROFIT! Now you can just run this and it will launch test file by IDE so you can debug it here.
+1. Install node plugin.
+2. Go to the run configurations
+3. Create new Mocha test configuration and set it up this way (bellow)
+4. PROFIT! Now you can just run this and it will launch test file by IDE so you can debug it here.
 
 ```
 Working dir: {YOUR FULL PATH}\project-template\project-frontend-template

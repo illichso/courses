@@ -8,7 +8,7 @@ services:
     - .:/code
     - logvolume01:/var/log
     links:
-    - redis
+    - mongo
   mongo:
     image: mongo
 volumes:
