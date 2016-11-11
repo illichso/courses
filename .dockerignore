@@ -1,6 +1,7 @@
 .git
 .gitignore
 .gradle
+.idea
 mongoDB
 docker-compose.yml
 npm-debug.log
