@@ -1,5 +1,7 @@
 # This is Dockerfile that defines build environment.
-FROM java:8-jdk
+FROM frolvlad/alpine-oraclejdk8:slim
+#FROM openjdk:8-jdk
+#FROM java:8-jdk
 
 # install Docker
 ENV DOCKER_VERSION=1.12.3
@@ -15,8 +17,8 @@ RUN curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/
 # allow to bind local Docker to the outer Docker
 VOLUME /var/run/docker.sock
 
-VOLUME /build
-WORKDIR /build
+VOLUME /backend/build
+WORKDIR /backend/build
 
-ENTRYPOINT ["/build/gradlew"]
-CMD ["test"]
+ENTRYPOINT ["./gradlew"]
+CMD ["chmod +x ./gradlew", "./gradlew build"]
