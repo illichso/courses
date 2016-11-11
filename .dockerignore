@@ -1,9 +1,10 @@
 .git
 .gitignore
+docker-compose.yml
+npm-debug.log
 LICENSE
 VERSION
 README.md
-Changelog.md
-Makefile
-docker-compose.yml
-docs
+TODO.md
+
+
