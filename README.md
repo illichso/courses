@@ -18,12 +18,12 @@
 
 ## What I need to run it in dev mode?
 ```
-JDK 8;
-Groovy 2.4+.
+JDK 8 only.
 
-Gradle - will be installed from gradle-wrapper
-Node - will be installed by Gradle.
-NPM - will be installed by Gradle.
+Gradle - will be installed from gradle-wrapper;
+Groovy - will be installed by Gradle;
+Node - will be installed by Gradle;
+NPM - will be installed by Gradle;
 Fronted dependenices  - will be installed by NPM.
 ```
 
