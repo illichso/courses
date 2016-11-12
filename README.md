@@ -17,8 +17,13 @@
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack
 
 ## What I need to run it in dev mode?
-Install Gradle 3.1  
-Install Node 7.1.0
+```
+JDK 8 only.
+Java - is included in JDK.
+Groovy - is included in JDK.
+Gradle - will be installed from gradle-wrapper
+Node - will be installed by Gradle.
+```
 
 Run:
 
@@ -41,11 +46,14 @@ npm start -s
 ```
 
 ## How to run docker-compose?
-Run:
 
+
+Run:
+```
 1. docker-compose up -d
 2. ./run_tests
 3. docker-compose down
+```
 
 ## How to build for production and run?
 Run:
