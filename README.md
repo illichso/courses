@@ -24,7 +24,7 @@ Groovy - is included in JDK.
 Gradle - will be installed from gradle-wrapper
 Node - will be installed by Gradle.
 NPM - will be installed by Gradle.
-Fronted dependenices  - will be installed bt NPM.
+Fronted dependenices  - will be installed by NPM.
 ```
 
 Run:
