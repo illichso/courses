@@ -1,5 +1,6 @@
 # This is Dockerfile that defines build environment.
 FROM frolvlad/alpine-oraclejdk8:slim
+#FROM webratio/groovy:2.4.4
 #FROM openjdk:8-jdk
 #FROM java:8-jdk
 

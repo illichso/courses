@@ -18,9 +18,9 @@
 
 ## What I need to run it in dev mode?
 ```
-JDK 8 only.
-Java - is included in JDK.
-Groovy - is included in JDK.
+JDK 8;
+Groovy 2.4+.
+
 Gradle - will be installed from gradle-wrapper
 Node - will be installed by Gradle.
 NPM - will be installed by Gradle.
