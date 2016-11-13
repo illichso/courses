@@ -47,6 +47,14 @@ Run main method in `Application.java` using IDE of your choice. And then go to f
 npm start -s
 ```
 
+## How to run docker?
+
+
+Run:
+```
+docker build -t java .
+```
+
 ## How to run docker-compose?
 
 
