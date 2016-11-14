@@ -1,31 +1,41 @@
 #FROM frolvlad/alpine-oraclejdk8:slim
 FROM java:8-jdk
-VOLUME /tmp
+WORKDIR courses
 
-#VOLUME /backend/build
+ADD backend/ backend/
 
-#ADD @project.build.finalName@.jar courses-0.0.1-SNAPSHOT.jar
+ADD frontend/ frontend/
 
-ADD backend .
+ADD gradle/ gradle/
 
-ADD frontend .
+ADD settings.gradle/ /courses/
 
-ADD gradle .
+ADD gradlew /courses/
 
-ADD gradlew .
+ADD npmw /courses/
 
-RUN sh -c ' chmod +x ./gradlew; '\
-                 './gradlew build;'
+#RUN ["/bin/bash", "-c", "apt-get update;"]
+#RUN ["/bin/bash", "-c", "chmod +x /courses/gradlew;"]
+#RUN ["/bin/bash", "-c", "./gradlew clean build"]
+#RUN ["/bin/bash", "-c", "gradlew assemble"]
+#RUN ["/bin/bash", "-c", "ls -la -a"]
+
+#RUN ["/bin/bash", "-c", "echo hello"]
+#                 './gradlew build;'
 #        './gradlew build;'
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", \
-  "-Djava.security.egd=file:/dev/./urandom", \
-  "-Djcr.repo.url=http://courses:8080", \
-  "-Dserver.port=8080", \
-  "-jar", "/courses-0.0.1-SNAPSHOT.jar", \
-  "--spring.config.location=file:/application.yml"]
+#CMD echo "This is a test." | wc -
+#ENTRYPOINT ["/bin/bash", "-c", "chmod +x ./gradlew;"]
+#CMD ["/bin/bash", "-c", "./gradlew clean build"]
+#CMD ["/bin/bash", "-c", "ls -la -a"]
+#CMD ls -la -a
+
+#ENTRYPOINT ["ls -la -a"]
+#RUN ["/bin/bash", "-c", "ls -la -a"]
+#CMD ["./gradlew assemble", \
+#     "./gradlew build]
 
 
 ## This is Dockerfile that defines build environment.

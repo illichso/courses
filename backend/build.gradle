@@ -4,6 +4,7 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -11,14 +12,21 @@ buildscript {
     }
 }
 
-
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'eclipse'
 apply plugin: 'docker'
+apply plugin: 'application'
 apply plugin: 'jacoco'
+
+group = "serg"
+
+task coursesDocker(type: Docker) {
+    applicationName = "nginx"
+    dockerfile = "../Dockerfile"
+}
 
 jacoco {
     toolVersion = "0.7.6.201602180812"
