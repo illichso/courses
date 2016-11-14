@@ -14,18 +14,18 @@ ADD gradle .
 
 ADD gradlew .
 
-RUN /bin/bash -c ' chmod +x ./gradlew; '\
+RUN sh -c ' chmod +x ./gradlew; '\
                  './gradlew build;'
 #        './gradlew build;'
 
 EXPOSE 8080
 
-#ENTRYPOINT ["java", \
-#  "-Djava.security.egd=file:/dev/./urandom", \
-#  "-Djcr.repo.url=http://courses:8080", \
-#  "-Dserver.port=8080", \
-#  "-jar", "/courses-0.0.1-SNAPSHOT.jar", \
-#  "--spring.config.location=file:/application.yml"]
+ENTRYPOINT ["java", \
+  "-Djava.security.egd=file:/dev/./urandom", \
+  "-Djcr.repo.url=http://courses:8080", \
+  "-Dserver.port=8080", \
+  "-jar", "/courses-0.0.1-SNAPSHOT.jar", \
+  "--spring.config.location=file:/application.yml"]
 
 
 ## This is Dockerfile that defines build environment.

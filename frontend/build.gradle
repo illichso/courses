@@ -6,6 +6,9 @@ apply plugin: 'base'
 version '0.0.1'
 
 clean.doFirst {
+    delete "${rootDir}/build"
+    println "deleted ${rootDir}\\build\\"
+
     delete "${rootDir}/.gradle/"
     println "deleted ${rootDir}\\.gradle\\"
 
