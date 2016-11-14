@@ -1,6 +1,6 @@
 #FROM frolvlad/alpine-oraclejdk8:slim
 FROM java:8-jdk
-
+VOLUME /tmp
 
 #VOLUME /backend/build
 
