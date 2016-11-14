@@ -1,5 +1,7 @@
 #FROM frolvlad/alpine-oraclejdk8:slim
-FROM java:8-jdk
+#FROM java:8-jdk
+#FROM bashell/alpine-bash
+FROM anapsix/alpine-java:latest
 
 WORKDIR courses
 
@@ -9,14 +11,17 @@ ADD frontend/ frontend/
 
 ADD gradle/ gradle/
 
-ADD settings.gradle/ /courses/
+ADD settings.gradle ./
 
-ADD gradlew /courses/
+ADD gradlew ./
 
-ADD npmw /courses/
+ADD npmw ./
 
-
+#RUN apk add --update curl && rm -rf /var/cache/apk/*
+RUN ["/bin/bash", "-c", "ls -la -a"]
 RUN ["/bin/bash", "-c", "./gradlew clean build"]
-RUN ["/bin/bash", "-c", "./gradlew bootRun"]
+#RUN ["/bin/bash", "-c", "./gradlew bootRun"]
 
 EXPOSE 8080
+
+ENTRYPOINT ["/bin/bash", "-c", "ls -la -a"]
