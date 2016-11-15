@@ -19,7 +19,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'eclipse'
 apply plugin: 'docker'
 apply plugin: 'application'
-apply plugin: 'jacoco'
+//apply plugin: 'jacoco'
 
 group = "serg"
 
@@ -28,16 +28,16 @@ task coursesDocker(type: Docker) {
     dockerfile = "../Dockerfile"
 }
 
-jacoco {
-    toolVersion = "0.7.6.201602180812"
-    reportsDir = file("$buildDir/customJacocoReportDir")
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-    }
-}
+//jacoco {
+//    toolVersion = "0.7.6.201602180812"
+//    reportsDir = file("$buildDir/customJacocoReportDir")
+//}
+//
+//jacocoTestReport {
+//    reports {
+//        xml.enabled true
+//    }
+//}
 
 jar {
     baseName = 'courses'
@@ -54,14 +54,14 @@ repositories {
 dependencies {
     compile 'org.springframework.boot:spring-boot-devtools'
     compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.codehaus.groovy:groovy'
+    compile 'org.codehaus.groovy:groovy:2.+'
 
     compile 'org.springframework.boot:spring-boot-starter-security'
     compile 'org.springframework.session:spring-session'
     compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
     compile 'org.springframework.boot:spring-boot-starter-data-rest'
     compile 'org.springframework.data:spring-data-rest-hal-browser'
-    compile 'org.projectlombok:lombok'
+    compile 'org.projectlombok:lombok:+'
     compile 'com.ibm.icu:icu4j:57.1'
 
     compile 'org.apache.commons:commons-lang3:+'

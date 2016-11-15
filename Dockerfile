@@ -19,12 +19,15 @@ ADD gradlew ./
 
 ADD npmw ./
 
-#RUN apk add --update curl && rm -rf /var/cache/apk/*
+RUN ["/bin/bash", "-c", "mkdir -p /data/db"]
 RUN ["/bin/bash", "-c", "ls -la -a"]
 RUN ["/bin/bash", "-c", "java -version"]
 RUN ["/bin/bash", "-c", "./gradlew clean build"]
-#RUN ["/bin/bash", "-c", "./gradlew bootRun"]
+RUN ["/bin/bash", "-c", "./gradlew bootRun"]
+RUN ["/bin/bash", "-c", "cd frontend npm start -s"]
+RUN ["/bin/bash", "-c", "npm start"]
 
-EXPOSE 8080
+EXPOSE 27017 8080 3000
 
-ENTRYPOINT ["/bin/bash", "-c", "ls -la -a"]
+ENTRYPOINT ["/usr/bin/mongod", \
+            "/bin/bash", "-c", "ls -la -a"]
