@@ -12,6 +12,7 @@ ADD frontend/ frontend/
 ADD gradle/ gradle/
 ADD settings.gradle ./
 ADD gradlew ./
+ADD npmw ./
 
 #Installing mongodb
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
@@ -21,13 +22,12 @@ RUN apt-get install -y mongodb-org
 RUN mkdir -p /data/db
 
 #Starting mongodb
-RUN mongod
-#Verifying mongodb
-RUN [initandlisten] waiting for connections on port 27017
+RUN nohup mongod & ./gradlew clean build
+RUN nohup ./gradlew bootRun
 #RUN ["/bin/bash", "-c", "mkdir -p /data/db"]
-
-RUN ["/bin/bash", "-c", "ls -la -a"]
-RUN ["/bin/bash", "-c", "java -version"]
+#
+#RUN ["/bin/bash", "-c", "ls -la -a"]
+#RUN ["/bin/bash", "-c", "java -version"]
 
 #RUN ["/bin/bash", "-c", "./gradlew build"]
 #RUN ["/bin/bash", "-c", "/usr/bin/mongod"]
