@@ -16,7 +16,7 @@ ADD gradlew ./
 ADD npmw ./
 
 #Starting mongodb and building project
-RUN nohup mongod & ./gradlew clean startManagedMongoDb build
+RUN ./gradlew clean startManagedMongoDb build
 
 #Starting backend
 RUN ./gradlew bootRun
