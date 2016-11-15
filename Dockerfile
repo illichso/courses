@@ -14,17 +14,14 @@ ADD settings.gradle ./
 ADD gradlew ./
 
 #Installing mongodb
-
-RUN apt-get update && \
-      apt-get -y install sudo
-RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-RUN echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.2 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-RUN sudo apt-get update
-RUN sudo apt-get install -y mongodb-org
-RUN sudo mkdir -p /data/db
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+RUN echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.2 main" |  tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+RUN apt-get update
+RUN apt-get install -y mongodb-org
+RUN mkdir -p /data/db
 
 #Starting mongodb
-RUN sudo service mongod start
+RUN mongod
 #Verifying mongodb
 RUN [initandlisten] waiting for connections on port 27017
 #RUN ["/bin/bash", "-c", "mkdir -p /data/db"]
