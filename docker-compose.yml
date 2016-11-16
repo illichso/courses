@@ -1,16 +1,29 @@
 version: '2'
 
-networks:
-  backend:
-  frontend:
-
 services:
-  backend:
-    image: mongo:latest
+  courses:
     build: /backend/build
     ports:
-      - "8086:8080"
-  frontend:
-    build: /backend/build
-    ports:
-      - "3001:3000"
+      - "8080:8080"
+      - "3000:3000"
+    links:
+      - db
+db:
+  image: mongo:latest
+
+
+
+#networks:
+#  backend:
+#  frontend:
+#
+#services:
+#  backend:
+#    image: mongo:latest
+#    build: /backend/build
+#    ports:
+#      - "8086:8080"
+#  frontend:
+#    build: /backend/build
+#    ports:
+#      - "3001:3000"

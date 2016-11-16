@@ -1,5 +1,5 @@
-FROM gomez/openjdk-mongo
-#FROM openjdk:8
+#FROM gomez/openjdk-mongo
+FROM openjdk:latest
 #FROM frolvlad/alpine-oraclejdk8:slim
 #FROM java:8-jdk
 #FROM bashell/alpine-bash
@@ -19,6 +19,6 @@ ADD npmw ./
 RUN ./gradlew clean startManagedMongoDb build
 
 #Starting backend
-RUN ./gradlew bootRun
+#RUN ./gradlew bootRun
 
-EXPOSE 27017 8080 3000
+#EXPOSE 27017 8080 3000
