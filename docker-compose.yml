@@ -1,24 +1,55 @@
 version: '2'
 
 networks:
-  courses_nework:
+  net:
 
 services:
-  mongo:
+
+  db:
     image: mongo:latest
     networks:
-        - courses_nework
-  app:
-    networks:
-        - courses_nework
+      - net
+#    ports:
+#      - "27017:27017"
+
+  web:
     build:
       context: .
+    networks:
+      - net
+    links:
+      - db
     ports:
-      - "8080:8080"
-      - "3000:3000"
+      - "27017:8080"
+#      - "8080:27017"
+#      - "8080:8080"
+#      - "3000:3000"
+
+
+#      - "localhost:27017"
+#      - "27017:8080"
+#      - "127.0.0.1:27017"
+#      - "8080:3000"
 
 
 
+
+#networks:
+#  courses_nework:
+#
+#services:
+#  mongo:
+#    image: mongo:latest
+#    networks:
+#        - courses_nework
+#  app:
+#    networks:
+#        - courses_nework
+#    build:
+#      context: .
+#    ports:
+#      - "8080:8080"
+#      - "3000:3000"
 
 
 #services:

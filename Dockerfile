@@ -15,15 +15,12 @@ ADD settings.gradle ./
 ADD gradlew ./
 ADD npmw ./
 
-EXPOSE 8080
-
 #Starting mongodb and building project
 RUN chmod +x ./gradlew
 RUN ./gradlew clean build
-RUN ./gradlew bootRun
-#RUN ./gradlew clean startManagedMongoDb build
 
-#Starting backend
-#RUN ./gradlew bootRun
+EXPOSE 8080 3000
 
-#EXPOSE 27017 8080 3000
+ENTRYPOINT ["/bin/sh", "-c", "./gradlew bootRun", \
+            "spring.data.mongodb.uri=db:courses"]
+
