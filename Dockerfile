@@ -16,7 +16,10 @@ ADD gradlew ./
 ADD npmw ./
 
 #Starting mongodb and building project
-RUN ./gradlew clean startManagedMongoDb build
+RUN chmod +x ./gradlew
+RUN ./gradlew clean build
+RUN ./gradlew bootRun
+#RUN ./gradlew clean startManagedMongoDb build
 
 #Starting backend
 #RUN ./gradlew bootRun

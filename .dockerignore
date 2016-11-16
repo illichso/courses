@@ -10,7 +10,6 @@ mongoDB/
 .gradle/
 .idea/
 .git
-docker-compose.yml
 npm-debug.log
 LICENSE
 VERSION
