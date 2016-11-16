@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 networks:
   net:
@@ -9,18 +9,19 @@ services:
     image: mongo:latest
     networks:
       - net
-    ports:
-      - "27017:27017"
+#    ports:
+#      - "27017:27017"
 
   web:
     build:
       context: .
     networks:
       - net
-    links:
-      - db
+#    links:
+#      - db
     ports:
-      - "8080:8080"
+      - "8086:8080"
+#      - "127.0.0.1:8080:8080"
 #      - "27017:8080"
 #      - "8080:27017"
 #      - "8080:8080"
