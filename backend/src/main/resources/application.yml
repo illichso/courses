@@ -1,2 +1,2 @@
 spring.devtools.livereload.enabled=false
-spring.data.mongodb.uri=mongodb://localhost/courses
+spring.data.mongodb.database=vourses

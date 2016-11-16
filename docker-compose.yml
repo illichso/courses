@@ -1,16 +1,16 @@
 version: '2'
 
 networks:
-  course_nework:
+  courses_nework:
 
 services:
   mongo:
     image: mongo:latest
     networks:
-        - course_nework
+        - courses_nework
   app:
     networks:
-        - course_nework
+        - courses_nework
     build:
       context: .
     ports:
@@ -21,30 +21,14 @@ services:
 
 
 
-#version: '2'
-#    services:
-#      web:
-#        build: .
-#        ports:
-#         - "5000:5000"
-#        volumes:
-#         - .:/code
-#        depends_on:
-#         - redis
-#      redis:
-#        image: redis
-
-#networks:
-#  backend:
-#  frontend:
-#
 #services:
-#  backend:
+#  mongo_db:
 #    image: mongo:latest
-#    build: /backend/build
+#  course_app:
+#    build:
+#      context: .
 #    ports:
-#      - "8086:8080"
-#  frontend:
-#    build: /backend/build
-#    ports:
-#      - "3001:3000"
+#      - "8080:8080"
+#      - "3000:3000"
+#    links:
+#      - mongo_db
