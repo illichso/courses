@@ -21,8 +21,8 @@ RUN ./gradlew clean build
 
 EXPOSE 8080 3000
 
-ENTRYPOINT ["/bin/bash", "-c", "./gradlew bootRun", \
-#            "spring.data.mongodb.host=db", \
+ENTRYPOINT ["./gradlew bootRun", \
+#            "./npmw start", \
             "spring.data.mongodb.uri=mongodb://db/courses"]
 #            "spring.data.mongodb.port=27017"]
 
