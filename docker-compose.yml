@@ -1,67 +1,11 @@
 version: "2"
 
-networks:
-  net:
-
 services:
-
   db:
-    image: mongo:latest
-    networks:
-      - net
-#    ports:
-#      - "27017:27017"
+    image: mongo
 
   web:
-    build:
-      context: .
-    networks:
-      - net
-#    links:
-#      - db
+#    image: gomez/backend_static
+    build: .
     ports:
-      - "8086:8080"
-#      - "127.0.0.1:8080:8080"
-#      - "27017:8080"
-#      - "8080:27017"
-#      - "8080:8080"
-#      - "3000:3000"
-
-
-#      - "localhost:27017"
-#      - "27017:8080"
-#      - "127.0.0.1:27017"
-#      - "8080:3000"
-
-
-
-
-#networks:
-#  courses_nework:
-#
-#services:
-#  mongo:
-#    image: mongo:latest
-#    networks:
-#        - courses_nework
-#  app:
-#    networks:
-#        - courses_nework
-#    build:
-#      context: .
-#    ports:
-#      - "8080:8080"
-#      - "3000:3000"
-
-
-#services:
-#  mongo_db:
-#    image: mongo:latest
-#  course_app:
-#    build:
-#      context: .
-#    ports:
-#      - "8080:8080"
-#      - "3000:3000"
-#    links:
-#      - mongo_db
+      - "8080:8080"
