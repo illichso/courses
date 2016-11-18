@@ -14,20 +14,20 @@ RUN chmod +x ./gradlew
 ADD npmw ./
 RUN chmod +x ./npmw
 
-#ADD backend/src/main/docker/application.properties      backend/src/main/resources/application.properties
-#RUN chmod +x backend/src/main/resources/application.properties
-
 #Buiding the project
-#RUN ./gradlew clean build
+RUN ./gradlew clean build
 
 #Adding built project jar and creating alias for it 'app.jar'
-ADD backend/build/libs/courses.jar /app.jar
+#ADD backend/build/libs/courses.jar /app.jar
 #ADD backend/build/ backend/
-RUN bash -c 'touch /app.jar'
+RUN sh -c 'touch backend/build/libs/courses.jar'
 
 EXPOSE 8080 3000
 
-ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://mongodb/courses", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java", \
+    "-Dspring.data.mongodb.uri=mongodb://mongodb/courses", \
+    "-Djava.security.egd=file:/dev/./urandom", \
+    "-jar","backend/build/libs/courses.jar"]
 #ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://192.168.99.100:32772/courses", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
 
