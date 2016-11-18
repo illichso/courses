@@ -1,22 +1,17 @@
-web:
- build: .
- ports:
-  - "8080"
- links:
-  - mongodb
+version: "2"
 
-mongodb:
- image: mongo
+networks:
+  net:
 
+services:
+  web:
+    build: .
+    ports:
+      - "8080"
+    networks:
+      - net
 
-#version: "2"
-#
-#services:
-#  db:
-#    image: mongo
-#
-#  web:
-##    image: gomez/backend_static
-#    build: .
-#    ports:
-#      - "8080:8080"
+  mongodb:
+    image: mongo
+    networks:
+      - net
