@@ -26,4 +26,5 @@ EXPOSE 8080 3000
 ENTRYPOINT ["java", \
     "-Dspring.data.mongodb.uri=mongodb://mongodb/courses", \
     "-Djava.security.egd=file:/dev/./urandom", \
-    "-jar","backend/build/libs/courses.jar"]
+    "-jar", \
+    "backend/build/libs/courses.jar"]
