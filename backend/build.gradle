@@ -4,19 +4,13 @@ buildscript {
     }
     repositories {
         mavenCentral()
-        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath 'com.sourcemuse.gradle.plugin:gradle-mongo-plugin:0.13.0'
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'idea'
-apply plugin: 'spring-boot'
-apply plugin: 'mongo'
+apply plugin: 'org.springframework.boot'
 
 clean.doFirst {
     delete "${rootDir}/build"
@@ -34,7 +28,6 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
@@ -69,14 +62,6 @@ jar {
 }
 
 jar.dependsOn(':frontend:assemble')
-
-task integrationTest(type: Test) {
-    runWithMongoDb = true
-}
-
-mongo {
-    port 'RANDOM'
-}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.2'

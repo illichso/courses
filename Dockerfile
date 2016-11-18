@@ -11,9 +11,6 @@ ADD settings.gradle ./
 ADD gradlew ./
 RUN chmod +x ./gradlew
 
-ADD npmw ./
-RUN chmod +x ./npmw
-
 #Buiding the project
 RUN ./gradlew clean build
 
