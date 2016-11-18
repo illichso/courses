@@ -1,5 +1,5 @@
 backend/gradle/
-#backend/build/
+backend/build/
 patches/
 frontend/.gradle/
 frontend/dist/
@@ -15,9 +15,3 @@ LICENSE
 VERSION
 README.md
 TODO.md
-/backend/build/classes/
-/backend/build/reports/
-/backend/build/test-results/
-/backend/build/dependency-cache/
-/backend/build/resources/
-/backend/build/tmp/
