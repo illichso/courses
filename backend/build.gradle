@@ -18,6 +18,17 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'mongo'
 
+clean.doFirst {
+    delete "${rootDir}/build"
+    println "deleted ${rootDir}\\build\\"
+
+    delete "${rootDir}/.gradle/"
+    println "deleted ${rootDir}\\.gradle\\"
+
+    delete "${rootDir}/frontend/.gradle/"
+    println "deleted ${rootDir}\\frontend\\.gradle\\"
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

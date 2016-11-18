@@ -3,22 +3,10 @@ plugins {
 }
 
 apply plugin: 'base'
-version '0.0.1'
-
-clean.doFirst {
-    delete "${rootDir}/build"
-    println "deleted ${rootDir}\\build\\"
-
-    delete "${rootDir}/.gradle/"
-    println "deleted ${rootDir}\\.gradle\\"
-
-    delete "${rootDir}/frontend/.gradle/"
-    println "deleted ${rootDir}\\frontend\\.gradle\\"
-}
 
 node {
-    version = '7.1.0'
-    npmVersion = '3.10.9'
+    version = '6.9.1'
+    npmVersion = '4.0.2'
     download = true
 }
 
