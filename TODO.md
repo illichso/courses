@@ -4,3 +4,4 @@ And make login button invisible if user is logged in.
 2. Make Docker integration
 
 3. Make logging with logback with gradle config
+4. Run executable scripts for mongoDB
