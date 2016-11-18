@@ -28,11 +28,3 @@ ENTRYPOINT ["java", \
     "-Dspring.data.mongodb.uri=mongodb://mongodb/courses", \
     "-Djava.security.egd=file:/dev/./urandom", \
     "-jar","backend/build/libs/courses.jar"]
-#ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://192.168.99.100:32772/courses", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-
-
-#ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://mongodb/courses", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-#ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://mongodb:32772/courses", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-
-#java -Dspring.data.mongodb.uri=mongodb://192.168.99.100:32769/courses -jar backend/build/libs/courses.jar
-
