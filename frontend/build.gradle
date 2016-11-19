@@ -10,6 +10,11 @@ node {
     download = true
 }
 
+clean.doFirst {
+    delete "${rootDir}/frontend/.gradle/"
+    println "deleted ${rootDir}\\frontend\\.gradle\\"
+}
+
 task runBuild(type: NodeTask) {
     args = ['run', 'build']
     ignoreExitValue = true
