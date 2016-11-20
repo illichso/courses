@@ -1,5 +1,5 @@
-FROM openjdk:latest
-#FROM anapsix/alpine-java:8_jdk
+#FROM openjdk:latest
+FROM anapsix/alpine-java:8_jdk
 
 #Creating folder to contain the project
 WORKDIR courses
