@@ -9,10 +9,11 @@
 [3]: https://ci.appveyor.com/api/projects/status/57lmmhfrdryko12v/branch/master?svg=true
 [4]: https://ci.appveyor.com/project/illichso/courses/branch/master
 
+[![License](https://img.shields.io/github/license/srs/gradle-node-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 [![Codecov Status](https://codecov.io/gh/illichso/courses/branch/master/graph/badge.svg)](https://codecov.io/gh/illichso/courses)
 
 [![Coveralls Status](https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master)](https://coveralls.io/github/illichso/courses?branch=master)
-
 
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack + Docker
 
