@@ -1,9 +1,22 @@
-#!/bin/bash
-
-use courses;
-
-db.createCollection('courses');
-
+db = db.getSiblingDB('courses');
+db.authors.insertMany
+([
+  {
+    _id: 'cory-house',
+    firstName: 'Cory',
+    lastName: 'House'
+  },
+  {
+    _id: 'scott-allen',
+    firstName: 'Scott',
+    lastName: 'Allen'
+  },
+  {
+    _id: 'dan-wahlin',
+    firstName: 'Dan',
+    lastName: 'Wahlin'
+  }
+]);
 db.courses.insertMany
 ([
   {
@@ -45,5 +58,20 @@ db.courses.insertMany
     authorId: "cory-house",
     length: "5:10",
     category: "HTML5"
+  }
+]);
+db.users.insertMany
+([
+  {
+    _id: 'Serg',
+    username: 'Serg',
+    password: 'Password+1',
+    roles : ['ADMIN', 'USER']
+  },
+  {
+    _id: 'regular',
+    username: 'regular',
+    password: 'reg1',
+    roles : ['USER']
   }
 ]);

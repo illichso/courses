@@ -4,11 +4,11 @@ FROM openjdk:latest
 WORKDIR courses
 
 #Add src needed for building the project
-ADD backend/ backend/
-ADD frontend/ frontend/
-ADD gradle/ gradle/
-ADD settings.gradle ./
-ADD gradlew ./
+COPY backend/ backend/
+COPY frontend/ frontend/
+COPY gradle/ gradle/
+COPY settings.gradle ./
+COPY gradlew ./
 RUN chmod +x ./gradlew
 
 #Buiding the project
@@ -16,7 +16,7 @@ RUN ./gradlew clean build
 
 RUN sh -c 'touch backend/build/libs/courses.jar'
 
-EXPOSE 8080 3000
+EXPOSE 8080
 
 ENTRYPOINT ["java", \
     "-Dspring.data.mongodb.uri=mongodb://mongodb/courses", \

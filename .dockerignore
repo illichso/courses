@@ -6,7 +6,6 @@ frontend/dist/
 frontend/node_modules/
 frontend/.travis.yml
 frontend/appveyor.yml
-mongoDB/
 .gradle/
 .idea/
 .git
@@ -15,3 +14,4 @@ LICENSE
 VERSION
 README.md
 TODO.md
+/mongoDB/Dockerfile

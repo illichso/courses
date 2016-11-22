@@ -4,14 +4,13 @@ networks:
   net:
 
 services:
+  mongodb:
+    build: ./mongoDB
+    networks:
+      - net
   web:
     build: .
     ports:
       - "8080"
-    networks:
-      - net
-
-  mongodb:
-    image: mongo
     networks:
       - net
