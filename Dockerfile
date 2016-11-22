@@ -19,7 +19,7 @@ RUN sh -c 'touch backend/build/libs/courses.jar'
 EXPOSE 8080
 
 ENTRYPOINT ["java", \
-    "-Dspring.data.mongodb.uri=mongodb://mongodb/courses", \
+    "-Dspring.data.mongodb.uri=mongodb://db/courses", \
     "-Djava.security.egd=file:/dev/./urandom", \
     "-jar", \
     "backend/build/libs/courses.jar"]

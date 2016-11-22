@@ -5,7 +5,7 @@ plugins {
 apply plugin: 'base'
 
 node {
-    version = '6.9.1'
+    version = '7.1.0'
     npmVersion = '4.0.2'
     download = true
 }
