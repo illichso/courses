@@ -19,4 +19,4 @@ RUN mongod --fork --logpath /var/log/mongodb.log --dbpath /data/db2 --smallfiles
 # Make the new dir a VOLUME to persists it
 VOLUME /data/db2
 
-CMD ["mongod", "--config", "/etc/mongodb.conf", "--smallfiles"]
+ENTRYPOINT ["mongod", "--config", "/etc/mongodb.conf", "--smallfiles"]
