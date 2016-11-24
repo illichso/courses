@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as types from '../constants/actionTypes';
+import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 export function displayAuthError(message) {
   return {type: types.ERROR_MESSAGE, message};
@@ -7,9 +8,16 @@ export function displayAuthError(message) {
 
 export function login(username, password) {
   return dispatch => {
-    return dispatch({
-      type: types.LOGIN,
-      payload: axios.post('/api/session', {username, password})
+    dispatch(beginAjaxCall());
+    return axios.post('/api/session', {username, password}).then(userToken => {
+      return dispatch({
+        type: `${types.LOGIN}_FULFILLED`,
+        payload: userToken
+      });
+    }).catch(error => {
+      dispatch(ajaxCallError(error));
+      console.log(error);
+      throw(error);
     });
   };
 }
@@ -31,5 +39,3 @@ export function getSession() {
     });
   };
 }
-
-

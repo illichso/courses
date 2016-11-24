@@ -1,4 +1,4 @@
-import * as types from '../actions/actionTypes';
+import * as types from '../constants/actionTypes';
 import initialState from '../constants/initialState';
 
 const courseReducer = (state = initialState.courses, action) => {

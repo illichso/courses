@@ -25,7 +25,7 @@ export default (
 
     <Route path="about" component={UserIsAuthenticated(AboutPage)}/>
 
-    <Route path="/login" component={UserIsNotAuthenticated(LoginPage)}/>
-    <Route path="/logout" component={UserIsNotAuthenticated(LogoutPage)}/>
+    <Route path="login" component={UserIsNotAuthenticated(LoginPage)}/>
+    <Route path="logout" component={UserIsNotAuthenticated(LogoutPage)}/>
   </Route>
 );

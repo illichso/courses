@@ -1,4 +1,4 @@
-import * as types from './actionTypes';
+import * as types from '../constants/actionTypes';
 import authorApi from '../api/authorApi';
 import {extractEmbeddedAuthor, extractEmbeddedAuthorList} from './HALExtractor';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';

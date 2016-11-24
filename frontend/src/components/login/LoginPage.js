@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from 'redux';
 import * as authenticationActions from "../../actions/authenticationActions";
 import LoginForm from './LoginForm';
+import {browserHistory} from 'react-router';
 
 class LoginPage extends Component {
 
@@ -16,6 +17,7 @@ class LoginPage extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.onLogin = this.onLogin.bind(this);
+    this.redirectAfterSuccess = this.redirectAfterSuccess.bind(this);
   }
 
   onChange(event) {
@@ -28,10 +30,15 @@ class LoginPage extends Component {
   onLogin(event) {
     const {login, password} = this.state.credentials;
     event.preventDefault();
-    this.props.actions.login(login, password).then(() => {
-      // redirectAfterSuccess(getState);
+    this.props.actions.login(login, password)
+    .then(() => {
+      this.redirectAfterSuccess();
       toastr.success("Login success!");
-    }).catch(error => toastr.error(error));
+    }).catch(error => {
+      console.log(error);
+      toastr.error(error);
+      throw(error);
+    });
   }
 
   onLogout(event) {
@@ -42,10 +49,14 @@ class LoginPage extends Component {
     }).catch(error => toastr.error(error));
   }
 
-  /* redirectAfterSuccess(getState) {
-   let redirect = getState().routing.locationBeforeTransitions.query.redirect;
-   redirect ? browserHistory.push(redirect) : browserHistory.push("/");//reads query params of redirect
-   }*/
+   redirectAfterSuccess() {
+    const location = this.props.location;
+    if (location.query && location.query.redirect) {
+      browserHistory.push(location.query.redirect);
+    } else {
+      browserHistory.push('/');
+    }
+   }
 
   render() {
     return (
@@ -59,7 +70,8 @@ class LoginPage extends Component {
 }
 
 LoginPage.propTypes = {
-  actions: PropTypes.object
+  actions: PropTypes.object,
+  location: PropTypes.object
 };
 
 

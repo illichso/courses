@@ -16,7 +16,6 @@ const AdminNavigationLink = VisibleToUser(({onClick, to ="#", label, activeClass
 const Navigation = ({onLogout}) => {
   return (
     <div className="container-fluid">
-      <AdminNavigationLink  label="Posts Management" activeClassName="active" to="/admin/posts"/>
       <AdminNavigationLink onClick={onLogout} label="Logout"/>
     </div>);
 };

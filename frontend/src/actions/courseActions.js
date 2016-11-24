@@ -1,4 +1,4 @@
-import * as types from './actionTypes';
+import * as types from '../constants/actionTypes';
 import {extractEmbeddedCourse, extractEmbeddedCourseList} from './HALExtractor';
 import courseApi from '../api/courseApi';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
