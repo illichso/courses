@@ -24,18 +24,32 @@ export function login(username, password) {
 
 export function logout() {
   return dispatch => {
-    return dispatch({
-      type: types.LOGOUT,
-      payload: axios.delete('/api/session')
+    dispatch(beginAjaxCall());
+    return axios.delete('/api/session').then(userToken => {
+      return dispatch({
+        type: `${types.LOGOUT}_FULFILLED`,
+        payload: userToken
+      });
+    }).catch(error => {
+      dispatch(ajaxCallError(error));
+      console.log(error);
+      throw(error);
     });
   };
 }
 
 export function getSession() {
-  return (dispatch) => {
-    return dispatch({
-      type: types.GET_SESSION,
-      payload: axios.get('/api/session')
+  return dispatch => {
+    dispatch(beginAjaxCall());
+    return axios.get('/api/session').then(userToken => {
+      return dispatch({
+        type: `${types.GET_SESSION}_FULFILLED`,
+        payload: userToken
+      });
+    }).catch(error => {
+      dispatch(ajaxCallError(error));
+      console.log(error);
+      throw(error);
     });
   };
 }
