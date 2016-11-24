@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as types from '../constants/actionTypes';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
+import authApi from '../api/authApi';
 
 export function displayAuthError(message) {
   return {type: types.ERROR_MESSAGE, message};
@@ -9,7 +10,7 @@ export function displayAuthError(message) {
 export function login(username, password) {
   return dispatch => {
     dispatch(beginAjaxCall());
-    return axios.post('/api/session', {username, password}).then(userToken => {
+    return authApi.login(username, password).then(userToken => {
       return dispatch({
         type: `${types.LOGIN}_FULFILLED`,
         payload: userToken
@@ -25,7 +26,7 @@ export function login(username, password) {
 export function logout() {
   return dispatch => {
     dispatch(beginAjaxCall());
-    return axios.delete('/api/session').then(userToken => {
+    return authApi.logout().then(userToken => {
       return dispatch({
         type: `${types.LOGOUT}_FULFILLED`,
         payload: userToken
@@ -41,7 +42,7 @@ export function logout() {
 export function getSession() {
   return dispatch => {
     dispatch(beginAjaxCall());
-    return axios.get('/api/session').then(userToken => {
+    return authApi.getSession().then(userToken => {
       return dispatch({
         type: `${types.GET_SESSION}_FULFILLED`,
         payload: userToken
