@@ -28,7 +28,7 @@ class App extends Component {
 
   render () {
     return (
-      <div className="container-fluid">
+      <div>
         <Navigation onLogout={this.onLogout}/>
         <Header
            loading={this.props.loading}

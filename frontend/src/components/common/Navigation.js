@@ -4,20 +4,17 @@ import {VisibleToUser} from "../../accessors/accessors";
 
 const Navigation = ({onLogout}) => {
   return (
-    <div className="container-fluid">
-      <AdminNavigationLink onClick={onLogout} label="Logout"/>
+    <div>
+      <LogoutLink onClick={onLogout} label="Logout"/>
     </div>);
 };
 
-const AdminNavigationLink = VisibleToUser(({onClick, to ="#", label, activeClassName = ""}) => {
-  const onClickFunction = onClick ? onClick : null;
+const LogoutLink = VisibleToUser(({onClick, to ="#", label}) => {
   return (
-        <Link onClick={onClickFunction}
-              className="blog-nav-item"
-              activeClassName={activeClassName}
+        <Link onClick={onClick}
               to={to}>{label}</Link>
           );
-    });
+  });
 
 Navigation.propTypes = {
   onLogout: React.PropTypes.func.isRequired

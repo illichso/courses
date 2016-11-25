@@ -5,11 +5,10 @@ import PasswordInput from '../common/PasswordInput';
 const LoginForm = ({credentials, onChange, onLogin}) => {
   return (
     <form>
-      <h1>Login page</h1>
-
+      <h3>Welcome to courses</h3>
       <TextInput
         name="login"
-        label="Login"
+        label="Username"
         value={credentials.user}
         onChange={onChange}
       />
@@ -24,7 +23,7 @@ const LoginForm = ({credentials, onChange, onLogin}) => {
 
       <input
         type="submit"
-        value="Login"
+        value="Log In"
         className="btn btn-primary"
         onClick={onLogin}
       />
