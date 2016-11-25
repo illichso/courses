@@ -10,7 +10,7 @@
 [2]: https://travis-ci.org/illichso/courses
 [3]: https://ci.appveyor.com/api/projects/status/57lmmhfrdryko12v/branch/master?svg=true
 [4]: https://ci.appveyor.com/project/illichso/courses/branch/master
-[5]: https://img.shields.io/docker/automated/illichso/courses.svg?style=plastic
+[5]: https://img.shields.io/docker/automated/illichso/courses.svg
 [6]: https://hub.docker.com/r/illichso/courses/builds/
 
 
