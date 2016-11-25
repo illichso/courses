@@ -11,6 +11,8 @@
 [3]: https://ci.appveyor.com/api/projects/status/57lmmhfrdryko12v/branch/master?svg=true
 [4]: https://ci.appveyor.com/project/illichso/courses/branch/master
 
+[Docker build](https://hub.docker.com/r/illichso/courses/builds/)
+
 [![License](https://img.shields.io/github/license/srs/gradle-node-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 [![Codecov Status](https://codecov.io/gh/illichso/courses/branch/master/graph/badge.svg)](https://codecov.io/gh/illichso/courses)
