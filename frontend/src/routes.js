@@ -9,11 +9,15 @@ import ManageAuthorPage from './components/author/ManageAuthorPage';
 import ManageCoursePage from './components/course/ManageCoursePage';
 import LoginPage from "./components/login/LoginPage";
 import LogoutPage from "./components/login/LogoutPage";
-import { UserIsAuthenticated , UserIsNotAuthenticated } from './accessors/accessors';
+import {
+  UserIsAuthenticated,
+  UserIsNotAuthenticated,
+  VisibleToUser
+} from './accessors/accessors';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={HomePage}/>
+    <IndexRoute component={UserIsAuthenticated(HomePage)}/>
 
     <Route path="authors" component={UserIsAuthenticated(AuthorsPage)}/>
     <Route path="author" component={UserIsAuthenticated(ManageAuthorPage)}/>
@@ -26,6 +30,6 @@ export default (
     <Route path="about" component={UserIsAuthenticated(AboutPage)}/>
 
     <Route path="login" component={UserIsNotAuthenticated(LoginPage)}/>
-    <Route path="logout" component={UserIsNotAuthenticated(LogoutPage)}/>
+    <Route path="logout" component={UserIsAuthenticated(LogoutPage)}/>
   </Route>
 );

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const setupAxiosInterceptors = () => {
   const onRequestSuccess = config => {
-    config.timeout = 10000;
+    config.timeout = 100000;
     return config;
   };
   const onResponseSuccess = (response) => response;
