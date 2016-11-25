@@ -2,16 +2,17 @@
 
 ## Build Status
 
-| Linux-x86_64            | macOS-x86_64             | Windows-x86_64            |
-|-------------------------|--------------------------|---------------------------|
-| [![Linux-86_64][1]][2]  | [![macOS-x86_64][1]][2]  | [![Windows-x86_64][3]][4] 
+| Linux-x86_64            | macOS-x86_64             | Windows-x86_64            | Docker build           |
+|-------------------------|--------------------------|---------------------------|------------------------|
+| [![Linux-86_64][1]][2]  | [![macOS-x86_64][1]][2]  | [![Windows-x86_64][3]][4] |[![Docker build][5]][6] |
 
 [1]: https://travis-ci.org/illichso/courses.svg?branch=master
 [2]: https://travis-ci.org/illichso/courses
 [3]: https://ci.appveyor.com/api/projects/status/57lmmhfrdryko12v/branch/master?svg=true
 [4]: https://ci.appveyor.com/project/illichso/courses/branch/master
+[5]: https://img.shields.io/docker/automated/illichso/courses.svg?style=plastic
+[6]: https://hub.docker.com/r/illichso/courses/builds/
 
-[Docker build](https://hub.docker.com/r/illichso/courses/builds/)
 
 [![License](https://img.shields.io/github/license/srs/gradle-node-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
