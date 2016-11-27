@@ -1,18 +1,7 @@
-FROM mhart/alpine-node
+FROM node
 
-RUN apk add --update \
-    python \
-    python-dev \
-    py-pip \
-    build-base \
-  && pip install virtualenv \
-  && rm -rf /var/cache/apk/* \
-  && pip install --upgrade pip
+WORKDIR courses
 
-#Creating folder to contain the project
-WORKDIR frontend
-
-#Add src needed for building the project
 COPY src/ src/
 COPY tools/ tools/
 COPY .babelrc/ ./
@@ -23,8 +12,6 @@ COPY webpack.config.prod.js/ ./
 COPY package.json/ ./
 RUN chmod +x ./package.json
 
-
-#Buiding the project
 RUN npm run build
 
 EXPOSE 3000
