@@ -1,11 +1,13 @@
-backend/gradle/
+db/Dockerfile
+
 backend/build/
-patches/
-frontend/.gradle/
+backend/Dockerfile
+backend/gradlew.bat
+
 frontend/dist/
 frontend/node_modules/
-frontend/.travis.yml
-frontend/appveyor.yml
+frontend/Dockerfile
+
 .gradle/
 .idea/
 .git
@@ -14,4 +16,3 @@ LICENSE
 VERSION
 README.md
 TODO.md
-/mongoDB/Dockerfile

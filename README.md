@@ -36,7 +36,7 @@ $ docker-compose up -d
 
 After it is finished, open in browser:
 
-[http://192.168.99.100:8080/](http://192.168.99.100:8080/)
+[http://192.168.99.100:3000/](http://192.168.99.100:3000/)
 
 
 ##Production run without docker
