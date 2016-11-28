@@ -12,8 +12,8 @@ COPY webpack.config.prod.js/ ./
 COPY package.json/ ./
 RUN chmod +x ./package.json
 
-RUN npm run build
+RUN ["/bin/bash", "-c", "npm run build"]
 
 EXPOSE 3000
 
-#ENTRYPOINT ["npm start"]
+ENTRYPOINT ["/bin/bash", "-c", "npm start"]

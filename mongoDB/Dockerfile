@@ -1,22 +1,22 @@
-FROM mongo:latest
+FROM mongo
 
-WORKDIR data/db2/
+WORKDIR data/courses_db/
 
-# Modify child mongo to use /data/db2 as dbpath (because /data/db wont persist the build)
-RUN echo "dbpath = /data/db2" > /etc/mongodb.conf \
-    && chown -R mongodb:mongodb /data/db2
+# Modify child mongo to use /data/courses_db as dbpath (because /data/db wont persist the build)
+RUN echo "dbpath = /data/courses_db" > /etc/mongodb.conf \
+    && chown -R mongodb:mongodb /data/courses_db
 
 COPY scripts/ scripts/
 
-RUN mongod --fork --logpath /var/log/mongodb.log --dbpath /data/db2 --smallfiles \
-    && CREATE_FILES=/data/db2/scripts/*_create.js \
+RUN mongod --fork --logpath /var/log/mongodb.log --dbpath /data/courses_db --smallfiles \
+    && CREATE_FILES=/data/courses_db/scripts/*_create.js \
     && for f in $CREATE_FILES; do mongo 127.0.0.1:27017 $f; done \
-    && INSERT_FILES=/data/db2/scripts/*_insert.js \
+    && INSERT_FILES=/data/courses_db/scripts/*_insert.js \
     && for f in $INSERT_FILES; do mongo 127.0.0.1:27017 $f; done \
-    && mongod --dbpath /data/db2 --shutdown \
-    && chown -R mongodb /data/db2
+    && mongod --dbpath /data/courses_db --shutdown \
+    && chown -R mongodb /data/courses_db
 
 # Make the new dir a VOLUME to persists it
-VOLUME /data/db2
+VOLUME /data/courses_db
 
 CMD ["mongod", "--config", "/etc/mongodb.conf", "--smallfiles"]
