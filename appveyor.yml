@@ -6,10 +6,10 @@ build:
   verbosity: detailed
 
 build_script:
-  - /backend/gradlew.bat assemble
+  - cd backend; gradlew.bat assemble
 
 test_script:
-  - /backend/gradlew.bat check
+  - cd backend; gradlew.bat check
 
 branches:
   only:
