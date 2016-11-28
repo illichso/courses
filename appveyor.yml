@@ -6,9 +6,9 @@ build:
   verbosity: detailed
 
 install:
-  - cinst install docker -y
-  - cinst install docker-compose -y
-  - cinst install docker-machine -y
+  - cinst docker -y
+  - cinst docker-compose -y
+  - cinst docker-machine -y
 
 build_script:
   - docker-compose up -d
