@@ -8,11 +8,20 @@ matrix:
       jdk: oraclejdk8
     - os: osx
 
+before_install:
+    - os: linux
+      - apt-get update -qq
+      - curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+      - apt-get install -qq nodejs npm
+      - node -v
+      - npm -v
+
 before_script:
-  - chmod +x ./gradlew
+  - chmod +x ./backend/gradlew
 
 script:
-  - ./gradlew check
+  - ./backend/gradlew check
+  - cd frontend; npm run build
 #  - ./gradlew codeCoverageReport
 
 after_success:
