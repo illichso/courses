@@ -3,7 +3,7 @@ sudo: required
 matrix:
   include:
     - os: linux
-      dist: xenial
+      dist: trusty
 #    - os: osx
 #      osx_image: xcode7.2
 
@@ -20,19 +20,22 @@ env:
 before_install:
   # update is required to update the repositories to see the new packages for
   # Docker.
-  - uname -r
+  - docker --version
+  - docker-compose --version
   - sudo apt-get update
   - sudo apt-get install apt-transport-https ca-certificates
   - sudo apt-key adv \
                    --keyserver hkp://ha.pool.sks-keyservers.net:80 \
                    --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-  - echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
+  - echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc/apt/sources.list.d/docker.list
   - sudo apt-get update
   - apt-cache policy docker-engine
   - sudo apt-get update
   - sudo apt-get install docker-engine
-  - sudo service docker start
-  - sudo docker run hello-world
+  - docker --version
+  - docker-compose --version
+#  - sudo service docker start
+#  - sudo docker run hello-world
 
   # Now we can install the newer docker-engine which is required for the newer
   # docker-composer we will install next. The messy options are to force it to
