@@ -17,13 +17,15 @@ before_install:
 #    - sudo apt-get update -y
 #    - sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 #    - sudo apt-get install -y nodejs npm
+    - sudo apt-get update
+    - sudo apt-get install -y clang-3.4
     - java -version
     - node -v
     - npm -v
 
 before_script:
-  - ls -la -a
-  - chmod +x ./backend/gradlew
+  - ls -la -a backend/
+  - chmod +x backend/gradlew
 
 script:
   - ./backend/gradlew check
