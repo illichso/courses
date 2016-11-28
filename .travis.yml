@@ -23,12 +23,21 @@ before_install:
     - node -v
     - npm -v
 
+install:
+    - npm install npm@latest -g
+
+after_install:
+    - node -v
+    - npm -v
+
 before_script:
   - ls -la -a backend/
   - chmod +x backend/gradlew
 
 script:
   - ./backend/gradlew check
+  - node -v
+  - npm -v
   - cd frontend; npm run build
 #  - ./gradlew codeCoverageReport
 
