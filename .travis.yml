@@ -46,11 +46,12 @@ install:
 
 before_script:
   - ls -la -a backend/
-  - ./backend/gradlew tasks
   - chmod +x backend/gradlew
+  - backend/gradlew tasks
+
 
 script:
-  - ./backend/gradlew check
+  - backend/gradlew check
   - node -v
   - npm -v
   - cd frontend; npm run build
