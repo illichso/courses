@@ -9,12 +9,11 @@ matrix:
     - os: osx
 
 before_install:
-    - os: linux
-      - apt-get update -qq
-      - curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-      - apt-get install -qq nodejs npm
-      - node -v
-      - npm -v
+    - apt-get update -qq
+    - curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+    - apt-get install -qq nodejs npm
+    - node -v
+    - npm -v
 
 before_script:
   - chmod +x ./backend/gradlew
