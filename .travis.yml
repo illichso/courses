@@ -27,6 +27,7 @@ before_install:
 install:
     - sudo apt-get update
     - sudo apt-get install oracle-java8-installer
+    - sudo apt install oracle-java8-set-default
     - npm install npm@latest -g
 
 after_install:
@@ -36,6 +37,7 @@ after_install:
 
 before_script:
   - ls -la -a backend/
+  - cd frontend; gradlew tasks
   - chmod +x backend/gradlew
 
 script:
