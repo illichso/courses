@@ -9,9 +9,9 @@ matrix:
     - os: osx
 
 before_install:
-    - sudo apt-get update -qq
-    - sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-    - sudo apt-get install -qq nodejs npm
+#    - sudo apt-get update -qq
+#    - sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+    - apt-get install -qq nodejs npm
     - node -v
     - npm -v
 
