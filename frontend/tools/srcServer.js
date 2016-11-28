@@ -27,7 +27,7 @@ browserSync({
       historyApiFallback(),
 
       // Only needed when testing against real backend, redirects /api calls to Spring Boot backend.
-      proxyMiddleware('/api', {target: 'http://192.168.99.100:8080', changeOrigin: true}),
+      proxyMiddleware('/api', {target: 'http://localhost:8080', changeOrigin: true}),
 
       webpackDevMiddleware(bundler, {
         // Dev middleware can't access config, so we provide publicPath

@@ -1,3 +1,4 @@
+backend/gradle/
 backend/build/
 patches/
 frontend/.gradle/
