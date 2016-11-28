@@ -62,8 +62,6 @@ dist
 
 #Patches
 /patches/
-/backend/gradle/
 /backend/build/
 /frontend/build/
-/backend/gradlew
-/backend/gradlew.bat
+
