@@ -1,61 +1,61 @@
-language: node_js
-node_js:
-  - 7
-
 sudo: required
 
 matrix:
   include:
     - os: linux
-      jdk: oraclejdk8
-    - os: osx
+#    - os: osx
+
+env:
+  # You may want to update this to whatever the latest version is, or keep it
+  # the same as your local machines. However, I have only tested it with 1.8.0+.
+  # There should be a time in the future when this is not necessary - it is
+  # explained in more detail below.
+  DOCKER_COMPOSE_VERSION: 1.9.0
 
 before_install:
-##    - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 68576280
-##    - sudo apt-add-repository "deb https://deb.nodesource.com/node_7.x $(lsb_release -sc) main"
-##    - sudo apt-get update
-##    - sudo apt-get install nodejs
-##    - sudo apt-get update -y
-##    - sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-##    - sudo apt-get install -y nodejs npm
-#    - sudo apt-get update
-#    - sudo apt-get install -y clang-3.4
-#    - java -version
-#    - node -v
-#    - npm -v
+  # update is required to update the repositories to see the new packages for
+  # Docker.
+  - sudo apt-get update
 
-install:
-    - sudo apt-get update
-    - sudo apt-get install oracle-java8-installer
-    - java -version
-    - java -fullversion
-    - sudo apt-get install oracle-java8-set-default
-    - java -version
-    - java -fullversion
-    - npm install npm@latest -g
-    - java -version
-    - java -fullversion
-    - node -v
-    - npm -v
+  # Now we can install the newer docker-engine which is required for the newer
+  # docker-composer we will install next. The messy options are to force it to
+  # be non-interactive (normally it asks you a bunch of config questions).
+  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
 
-#after_install:
-#    - java -version
-#    - java -fullversion
-#    - node -v
-#    - npm -v
+  # Print out the current docker-compose version. Once this reports 1.6+ then we
+  # do not need the following steps.
+  - docker-compose --version
+
+  # As of the writing of this script Travis has docker-compose v1.4.2, we need
+  # to update it to 1.8+. $DOCKER_COMPOSE_VERSION is provide from the `env`
+  # above.
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+  # Check that docker-compose is now running the latest version (or at least the
+  # one we specified). This is not to be confused with the version we printed
+  # before doing the update.
+  - docker-compose --version
+
+  # Setup your application stack. You may need to tweak these commands if you
+  # doing out-of-the-ordinary docker-compose builds.
+#  - docker-compose pull
+#  - docker-compose build
+  - docker-compose up -d
 
 before_script:
-  - ls -la -a backend/
-  - chmod +x backend/gradlew
-  - backend/gradlew tasks
-
+  - docker images -a
+  - docker ps -a
+  - docker network ls
+  - docker volume ls
 
 script:
-  - backend/gradlew check
-  - node -v
-  - npm -v
-  - cd frontend; npm run build
-#  - ./gradlew codeCoverageReport
+  - docker-compose up -d
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+after_script:
+  - docker images -a
+  - docker ps -a
+  - docker network ls
+  - docker volume ls
