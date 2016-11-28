@@ -7,8 +7,8 @@ matrix:
 #    - os: osx
 #      osx_image: xcode7.2
 
-services:
-  - docker
+#services:
+#  - docker
 
 env:
   # You may want to update this to whatever the latest version is, or keep it
@@ -34,7 +34,7 @@ before_install:
   - sudo apt-get install docker-engine
   - docker --version
   - docker-compose --version
-#  - sudo service docker start
+  - sudo service docker start
 #  - sudo docker run hello-world
 
   # Now we can install the newer docker-engine which is required for the newer
