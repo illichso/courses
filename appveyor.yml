@@ -9,6 +9,8 @@ install:
   - cinst docker docker-compose docker-machine -y
 
 build_script:
+  - docker -v
+  - docker-compose -v
   - dir
   - docker-compose up -d
 
