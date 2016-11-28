@@ -6,7 +6,7 @@ build:
   verbosity: detailed
 
 build_script:
-  - cd backend; gradlew.bat assemble
+  - docker-compose up -d
 
 test_script:
   - cd backend; gradlew.bat check
