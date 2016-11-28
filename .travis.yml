@@ -27,11 +27,16 @@ before_install:
 install:
     - sudo apt-get update
     - sudo apt-get install oracle-java8-installer
-    - sudo apt install oracle-java8-set-default
+    - java -version
+    - java -fullversion
+    - sudo apt-get install oracle-java8-set-default
+    - java -version
+    - java -fullversion
     - npm install npm@latest -g
 
 after_install:
     - java -version
+    - java -fullversion
     - node -v
     - npm -v
 
