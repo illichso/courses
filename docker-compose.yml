@@ -5,7 +5,7 @@ networks:
 
 services:
   db:
-    build: ./mongoDB
+    build: ./db
     networks:
       - net
   backend:
