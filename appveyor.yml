@@ -6,10 +6,14 @@ build:
   verbosity: detailed
 
 build_script:
+  - @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+  - choco install docker -y
+  - choco install docker-compose -y
+  - choco install docker-machine -y
   - docker-compose up -d
 
-test_script:
-  - cd backend; gradlew.bat check
+#test_script:
+#  - cd backend; gradlew.bat check
 
 branches:
   only:
