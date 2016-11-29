@@ -9,7 +9,7 @@ COPY gradlew ./
 
 RUN chmod +x ./gradlew
 
-RUN ./gradlew assemble
+RUN ./gradlew clean build
 
 RUN sh -c 'touch build/libs/courses.jar'
 

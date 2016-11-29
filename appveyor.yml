@@ -27,10 +27,11 @@ build_script:
   - setx DOCKER_MACHINE_NAME default
   - setx DOCKER_TLS_VERIFY 1
   - set
-  - docker-machine env
-  - docker-machine start default
-  - docker info
   - docker-machine ls
+  - docker-machine start
+  - docker-machine start default
+  - docker-machine env
+  - docker info
 #  - docker-machine env --shell powershell
 #  - docker-machine env --shell powershell dev
 #  - docker-machine env --shell powershell dev | iex
