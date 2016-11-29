@@ -9,7 +9,7 @@ install:
   - cup all -v
   - cinst -y docker docker-compose docker-machine virtualbox
 
-script:
+build_script:
   - systeminfo
   - docker --version
   - docker-compose --version
