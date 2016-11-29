@@ -12,20 +12,22 @@ services:
   - docker-compose
 
 before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
-#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $(brew --repo) &&  git fetch && git reset --hard origin/master; fi
-#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $(brew --repo) &&  git fetch && git reset --hard origin/master; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask update; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cleanup; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask cleanup; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask list; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker docker-compose; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker docker-compose boot2docker; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install docker-toolbox; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask list; fi
-#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env dev)"; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine create --driver "virtualbox" myBoxName; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start myBoxName; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env myBoxName)"; fi
@@ -51,7 +53,8 @@ before_install:
 before_script:
   - docker --version
   - docker-compose --version
-#  - docker-machine --version
+  - docker-machine --version
+  - docker info
   - docker images -a
   - docker ps -a
   - docker network ls

@@ -14,7 +14,8 @@ build_script:
   - dir
   - type docker-compose.yml
   - docker-machine ls
-  - docker-machine env --shell powershell dev
+  - docker-machine env --shell powershell
+#  - docker-machine env --shell powershell dev
 #  - docker-machine env --shell powershell dev | iex
   - docker-compose up -d
 
