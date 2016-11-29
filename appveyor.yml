@@ -9,8 +9,6 @@ install:
   - cup all -v
   - cinst -y docker docker-compose docker-machine virtualbox
   - refreshenv
-
-build_script:
   - systeminfo
   - docker --version
   - docker-compose --version
@@ -21,11 +19,15 @@ build_script:
   - setx DOCKER_HOST tcp://192.168.99.100:2376
   - setx DOCKER_MACHINE_NAME default
   - setx DOCKER_TLS_VERIFY 1
-  - set virtualbox=C:\Program Files\Oracle\VirtualBox\VBoxHeadless.exe
+  - set virtualbox=C:\Program Files\Oracle\VirtualBox\VBoxManage.exe
+#  - set virtualbox=C:\Program Files\Oracle\VirtualBox\VBoxHeadless.exe
   - set
   - refreshenv
   - docker-machine ls
-  - virtualbox startvm default
+  - virtualbox startvm default --type headless
+
+build_script:
+
 #  - dir "C:\Program Files\Oracle\VirtualBox\"
 #  - "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm default
   - docker-machine create --driver virtualbox default
