@@ -25,9 +25,9 @@ build_script:
   - set
   - refreshenv
   - docker-machine ls
-#  - virtualbox startvm default
-  - dir "C:\Program Files\Oracle\VirtualBox\"
-  - "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm default
+  - virtualbox startvm default
+#  - dir "C:\Program Files\Oracle\VirtualBox\"
+#  - "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm default
   - docker-machine create --driver virtualbox default
   - docker-machine ls
   - docker-machine env default
