@@ -22,12 +22,13 @@ build_script:
   - setx DOCKER_TLS_VERIFY 1
   - set
   - docker-machine ls
-#  - docker-machine create --driver virtualbox default
-#  - docker-machine ls
-#  - docker-machine env default
-#  - eval "$(docker-machine env default)"
-#  - type docker-compose.yml
-#  - docker-compose up -d
+  - "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm <default>
+  - docker-machine create --driver virtualbox default
+  - docker-machine ls
+  - docker-machine env default
+  - eval "$(docker-machine env default)"
+  - type docker-compose.yml
+  - docker-compose up -d
 
 #test_script:
 #  - cd backend; gradlew.bat check
