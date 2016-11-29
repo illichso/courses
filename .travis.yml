@@ -11,7 +11,7 @@ services:
   - docker
   - docker-compose
 
-before_install:
+script:
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler | grep Processor; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPHardwareDataType | grep Cores:; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPHardwareDataType | grep "  Memory:"; fi
@@ -35,7 +35,6 @@ before_install:
 
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker docker-compose; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install docker-compose; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
 
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install docker-toolbox; fi
@@ -77,7 +76,6 @@ before_install:
 ##  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then boot2docker init; fi
 ##  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then boot2docker up; fi
 
-before_script:
   - docker --version
   - docker-compose --version
   - docker-machine --version
@@ -87,7 +85,6 @@ before_script:
 #  - docker network ls
 #  - docker volume ls
 
-script:
   - docker-compose up -d
 
 after_script:

@@ -6,9 +6,11 @@ build:
   verbosity: detailed
 
 install:
+  - cup all -v
   - cinst -y docker docker-compose docker-machine virtualbox
 
 build_script:
+  - systeminfo
   - docker -v
   - docker-compose -v
   - dir
