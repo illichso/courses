@@ -5,6 +5,7 @@ matrix:
 #    - os: linux
 #      dist: trusty
     - os: osx
+      env: OSX=10.12
       osx_image: xcode8.2
 
 services:
@@ -49,7 +50,10 @@ script:
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-compose; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services list; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then env | grep DOCKER; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval $(docker-machine env default)t; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start; fi
 
 #  Installing HyperKit
