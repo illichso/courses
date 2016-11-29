@@ -31,6 +31,7 @@ script:
 
 #    Installing docker
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $(brew --repo) &&  git fetch && git reset --hard origin/master; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services list; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask update; fi
 
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
@@ -38,8 +39,7 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
 
 #  Installing brew services
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services list; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew tap homebrew/services; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew tap homebrew/services; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services list; fi
 
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install docker-toolbox; fi
@@ -48,6 +48,7 @@ script:
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start default; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services list; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start; fi
 
