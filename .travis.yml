@@ -2,11 +2,11 @@ sudo: required
 
 matrix:
   include:
-#    - os: linux
-#      dist: trusty
-    - os: osx
-      env: OSX=10.12
-      osx_image: xcode8.2
+    - os: linux
+      dist: trusty
+#    - os: osx
+#      env: OSX=10.12
+#      osx_image: xcode8.2
 
 services:
   - docker
@@ -16,28 +16,14 @@ script:
 #   Checking os info
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
 
-#    Installing docker
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services list; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask update; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install caskroom/cask/brew-cask; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install docker docker-machine docker-compose docker-toolbox; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
-
-
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine create --driver "virtualbox" myBoxNamet; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start myBoxName; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env myBoxName)"; fi
-
-
-  - docker --version
-  - docker-compose --version
-  - docker-machine --version
-#  - docker info
-#  - docker images -a
-#  - docker ps -a
-#  - docker network ls
-#  - docker volume ls
+  - docker -v
+  - docker-compose -v
+  - docker-machine -v
+  - docker info
+  - docker images -a
+  - docker ps -a
+  - docker network ls
+  - docker volume ls
 
   - docker-compose up -d
 
