@@ -22,19 +22,32 @@ before_install:
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then hwprefs memory_sizet; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $(brew --repo) &&  git fetch && git reset --hard origin/master; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask update; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cleanup; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask cleanup; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask list; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker docker-compose boot2docker; fi
-#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install docker-toolbox; fi
+
+#    Installing docker
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker docker-compose; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask list; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env default)"; fi
+
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install docker-toolbox; fi
+
+#  Starting docker-machine
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start default; fi
+
+#  Installing HyperKit
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pwd; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then git clone https://github.com/docker/hyperkit; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd hyperkit; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then make; fi
+
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask list; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env default)"; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine create --driver "virtualbox" myBoxName; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start myBoxName; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env myBoxName)"; fi
