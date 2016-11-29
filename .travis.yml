@@ -10,7 +10,6 @@ matrix:
 
 services:
   - docker
-  - docker-compose
 
 script:
 #   Checking os info
@@ -18,7 +17,7 @@ script:
 
   - docker -v
   - docker-compose -v
-  - docker-machine -v
+#  - docker-machine -v
   - docker info
   - docker images -a
   - docker ps -a
@@ -30,5 +29,7 @@ script:
 after_script:
   - docker images -a
   - docker ps -a
-  - docker network ls
   - docker volume ls
+  - docker network ls
+  - docker network inspect courses_net
+  - docker info
