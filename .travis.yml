@@ -13,7 +13,10 @@ services:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker docker-compose docker-machine; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install docker-toolbox; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine create --driver "virtualbox" myBoxName; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start myBoxName; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env myBoxName)"; fi
