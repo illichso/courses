@@ -20,7 +20,7 @@ before_install:
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install caskroom/cask/brew-cask ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install virtualbox; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker docker-machine; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env dev)"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env dev)"; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine create -d virtualbox dev; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env dev)"; fi
