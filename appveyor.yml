@@ -13,8 +13,12 @@ build_script:
   - docker-compose -v
   - dir
   - type docker-compose.yml
+  - docker --version
+  - docker-compose --version
+  - docker-machine --version
+  - docker info
   - docker-machine ls
-  - docker-machine env --shell powershell
+#  - docker-machine env --shell powershell
 #  - docker-machine env --shell powershell dev
 #  - docker-machine env --shell powershell dev | iex
   - docker-compose up -d
