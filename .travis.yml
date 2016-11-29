@@ -20,7 +20,7 @@ before_install:
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then du -sh *; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then hwprefs cpu_count; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then hwprefs memory_sizet; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $(brew --repo) &&  git fetch && git reset --hard origin/master; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask update; fi
@@ -34,7 +34,7 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew ls --versions; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask list; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env dev)"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env default)"; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine create --driver "virtualbox" myBoxName; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start myBoxName; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env myBoxName)"; fi
@@ -61,11 +61,11 @@ before_script:
   - docker --version
   - docker-compose --version
   - docker-machine --version
-  - docker info
-  - docker images -a
-  - docker ps -a
-  - docker network ls
-  - docker volume ls
+#  - docker info
+#  - docker images -a
+#  - docker ps -a
+#  - docker network ls
+#  - docker volume ls
 
 script:
   - docker-compose up -d
