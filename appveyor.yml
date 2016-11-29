@@ -11,8 +11,8 @@ install:
 
 build_script:
   - systeminfo
-  - docker -v
-  - docker-compose -v
+  - docker --version
+  - docker-compose --version
   - dir
   - type docker-compose.yml
   - docker --version
