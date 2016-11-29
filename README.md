@@ -16,14 +16,14 @@
 ## Docker builds  
 | Courses_db          | Courses_backend          | Courses_frontend          | 
 |---------------------|--------------------------|---------------------------|
-|[![Courses_db][1]][2]|[![Courses_backend][3]][4]|[![Courses_frontend][5]][6]|
+|[![Courses_db][5]][6]|[![Courses_backend][7]][8]|[![Courses_frontend][9]][10]|
 
-[1]: https://img.shields.io/docker/automated/illichso/courses_db.svg
-[2]: https://hub.docker.com/r/illichso/courses_db/builds/
-[3]: https://img.shields.io/docker/automated/illichso/courses_backend.svg
-[4]: https://hub.docker.com/r/illichso/courses_backend/builds/
-[5]: https://img.shields.io/docker/automated/illichso/courses_frontend.svg
-[6]: https://hub.docker.com/r/illichso/courses_frontend/builds/
+[5]: https://img.shields.io/docker/automated/illichso/courses_db.svg
+[6]: https://hub.docker.com/r/illichso/courses_db/builds/
+[7]: https://img.shields.io/docker/automated/illichso/courses_backend.svg
+[8]: https://hub.docker.com/r/illichso/courses_backend/builds/
+[9]: https://img.shields.io/docker/automated/illichso/courses_frontend.svg
+[10]: https://hub.docker.com/r/illichso/courses_frontend/builds/
 
 [![Codecov Status](https://codecov.io/gh/illichso/courses/branch/master/graph/badge.svg)](https://codecov.io/gh/illichso/courses)
 
