@@ -12,7 +12,7 @@ services:
   - docker-compose
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler | grep Processor; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $(brew --repo) &&  git fetch && git reset --hard origin/master; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
