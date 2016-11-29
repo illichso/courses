@@ -12,6 +12,8 @@ build_script:
   - docker -v
   - docker-compose -v
   - dir
+  - type docker-compose.yml
+  - python.exe
   - docker-compose up -d
 
 #test_script:

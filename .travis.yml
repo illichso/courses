@@ -14,13 +14,14 @@ services:
 before_install:
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then xcode-select –install && ruby -e “$(curl -fsSL && https://raw.githubusercontent.com/Homebrew/install/master/install)”; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install virtualbox && brew install docker && brew install boot2docker && boot2docker init && boot2docker up; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew help ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew help ; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew help ; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew help ; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install caskroom/cask/brew-cask ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install virtualbox; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker docker-machine; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine start; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env dev)"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start docker-machine; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then docker-machine create -d virtualbox dev; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then eval "$(docker-machine env dev)"; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install docker; fi
