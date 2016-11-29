@@ -21,7 +21,7 @@ build_script:
   - setx DOCKER_HOST tcp://192.168.99.100:2376
   - setx DOCKER_MACHINE_NAME default
   - setx DOCKER_TLS_VERIFY 1
-  - set virtualbox=C:\Program Files\Oracle\VirtualBox\VBoxManage.exe
+  - set virtualbox=C:\Program Files\Oracle\VirtualBox\VBoxHeadless.exe
   - set
   - refreshenv
   - docker-machine ls
