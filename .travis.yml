@@ -8,11 +8,8 @@ matrix:
 #      env: OSX=10.12
 #      osx_image: xcode8.2
 
-#services:
-#  - docker
 
 script:
-#   Checking os info
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
 
   - docker -v

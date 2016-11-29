@@ -9,22 +9,32 @@ install:
   - cup all -v
   - cinst -y docker docker-compose docker-machine virtualbox
 
-build_script:
+script:
   - systeminfo
   - docker --version
   - docker-compose --version
-  - dir
-  - type docker-compose.yml
-  - docker --version
-  - docker-compose --version
   - docker-machine --version
-  - docker-machine env default
+  - dir
+  - dir C:\Users
+  - set
+  - set DOCKER_CERT_PATH=C:\Users\appveyor\.docker\machine\machines\default
+  - set DOCKER_HOST=tcp://192.168.99.100:2376
+  - set DOCKER_MACHINE_NAME=default
+  - set DOCKER_TLS_VERIFY=1
+  - set
+  - setx DOCKER_CERT_PATH C:\Users\appveyor\.docker\machine\machines\default
+  - setx DOCKER_HOST tcp://192.168.99.100:2376
+  - setx DOCKER_MACHINE_NAME default
+  - setx DOCKER_TLS_VERIFY 1
+  - set
+  - docker-machine env
   - docker-machine start default
   - docker info
   - docker-machine ls
 #  - docker-machine env --shell powershell
 #  - docker-machine env --shell powershell dev
 #  - docker-machine env --shell powershell dev | iex
+  - type docker-compose.yml
   - docker-compose up -d
 
 #test_script:
