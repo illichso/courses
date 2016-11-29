@@ -22,7 +22,7 @@ build_script:
   - setx DOCKER_TLS_VERIFY 1
   - set
   - docker-machine ls
-  - "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm <default>
+  - "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm default
   - docker-machine create --driver virtualbox default
   - docker-machine ls
   - docker-machine env default
