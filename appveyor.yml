@@ -6,13 +6,15 @@ build:
   verbosity: detailed
 
 install:
-  - cinst docker docker-compose docker-machine -y
+  - cinst -y docker docker-compose docker-machine virtualbox
 
 build_script:
   - docker -v
   - docker-compose -v
   - dir
   - type docker-compose.yml
+  - docker-machine ls
+  - docker-machine env --shell powershell dev | iex
   - docker-compose up -d
 
 #test_script:
