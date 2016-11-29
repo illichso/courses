@@ -20,6 +20,7 @@ build_script:
   - setx DOCKER_HOST tcp://192.168.99.100:2376
   - setx DOCKER_MACHINE_NAME default
   - setx DOCKER_TLS_VERIFY 1
+  - setx virtualbox C:\Program Files\Oracle\VirtualBox\VBoxManage.exe
   - set
   - docker-machine ls
   - virtualbox startvm default
