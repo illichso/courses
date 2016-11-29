@@ -18,6 +18,8 @@ build_script:
   - docker --version
   - docker-compose --version
   - docker-machine --version
+  - docker-machine env default
+  - docker-machine start default
   - docker info
   - docker-machine ls
 #  - docker-machine env --shell powershell

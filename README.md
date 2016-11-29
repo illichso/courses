@@ -1,18 +1,29 @@
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack + Docker
 
 ## Status
-| Linux-x86_64         | macOS-x86_64          | Windows-x86_64          | Docker_build          |License           |
-|----------------------|-----------------------|-------------------------|-----------------------|------------------|
-|[![Linux-86_64][1]][2]|[![macOS-x86_64][1]][2]|[![Windows-x86_64][3]][4]|[![Docker_build][5]][6]|[![License][7]][8]|
+| Linux-x86_64         | macOS-x86_64          | Windows-x86_64          |License           |
+|----------------------|-----------------------|-------------------------|------------------|
+|[![Linux-86_64][1]][2]|[![macOS-x86_64][1]][2]|[![Windows-x86_64][3]][4]|[![License][5]][6]|
 
 [1]: https://travis-ci.org/illichso/courses.svg?branch=master
 [2]: https://travis-ci.org/illichso/courses
 [3]: https://ci.appveyor.com/api/projects/status/57lmmhfrdryko12v/branch/master?svg=true
 [4]: https://ci.appveyor.com/project/illichso/courses/branch/master
-[5]: https://img.shields.io/docker/automated/illichso/courses.svg
-[6]: https://hub.docker.com/r/illichso/courses/builds/
-[7]: https://img.shields.io/github/license/srs/gradle-node-plugin.svg
-[8]: http://www.apache.org/licenses/LICENSE-2.0.html
+[5]: https://img.shields.io/github/license/srs/gradle-node-plugin.svg
+[6]: http://www.apache.org/licenses/LICENSE-2.0.html
+
+
+## Docker builds  
+| Courses_db          | Courses_backend          | Courses_frontend          | 
+|---------------------|--------------------------|---------------------------|
+|[![Courses_db][1]][2]|[![Courses_backend][3]][4]|[![Courses_frontend][5]][6]|
+
+[1]: https://img.shields.io/docker/automated/illichso/courses_db.svg
+[2]: https://hub.docker.com/r/illichso/courses_db/builds/
+[3]: https://img.shields.io/docker/automated/illichso/courses_backend.svg
+[4]: https://hub.docker.com/r/illichso/courses_backend/builds/
+[5]: https://img.shields.io/docker/automated/illichso/courses_frontend.svg
+[6]: https://hub.docker.com/r/illichso/courses_frontend/builds/
 
 [![Codecov Status](https://codecov.io/gh/illichso/courses/branch/master/graph/badge.svg)](https://codecov.io/gh/illichso/courses)
 
