@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+system_profiler SPSoftwareDataType;
 cd "$(brew --repo)" && git fetch && git reset --hard origin/master;
 brew update;
 brew cask update;

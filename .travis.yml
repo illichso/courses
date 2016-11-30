@@ -15,9 +15,8 @@ script:
   - uname -a
   - pwd
   - ls -la -a
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./brew.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bash ./brew.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./macos.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bash ./macos.sh; fi
 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./linux.sh; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./linux.sh; fi
