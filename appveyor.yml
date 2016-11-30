@@ -8,10 +8,11 @@ build:
 install:
   - cup all -v
   - cinst -y jdk8 nodejs.install
+  - refreshenv
 
 test_script:
-  - cd backend; gradlew.bat clean build
-  - cd frontend; npm run build
+  - cd backend; dir; gradlew.bat clean build; dir
+  - cd frontend; dir; npm run build
 
 branches:
   only:
