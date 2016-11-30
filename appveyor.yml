@@ -8,10 +8,18 @@ build:
 install:
   - cup all -v
   - cinst -y jdk8 nodejs.install
+  - npm install npm@latest -g
+  - npm cache clean
   - refreshenv
+  - java -version
+  - node -v
+  - npm -v
+  - dir
+
+build_script:
+   - dir; cd backend; dir; gradlew.bat clean build; dir
 
 test_script:
-  - cd backend; dir; gradlew.bat clean build; dir
   - cd frontend; dir; npm run build
 
 branches:
