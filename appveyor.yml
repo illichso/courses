@@ -17,20 +17,12 @@ install:
   - npm -v
 
 build_script:
-  - dir
   - cd backend
-  - dir
   - gradlew.bat build
 
 test_script:
-  - cd ../frontend; npm run build
-
-#  - dir
-#  - cd ..
-#  - dir
-#  - cd frontend
-#  - dir
-#  - npm run build
+  - cd ../frontend
+  - npm run build
 
 branches:
   only:
