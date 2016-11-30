@@ -2,8 +2,11 @@ version: 1.0.{build}
 platform:
   - x86
   - x64
+
+init:
+  - systeminfo
+
 build:
-#  verbosity: detailed
   verbosity: quiet
 
 install:
@@ -16,20 +19,12 @@ install:
   - node -v
   - npm -v
 
-build_script:
+test_script:
   - cd backend
   - gradlew.bat build
-
-test_script:
   - cd ../frontend
   - npm run build
 
 branches:
   only:
     - master
-
-#cache:
-#    - node_modules -> frontend\package.json
-
-environment:
-  JAVA_HOME: C:\Program Files\Java\jdk1.8.0

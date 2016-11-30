@@ -16,7 +16,6 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install node; fi
-#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then node -v; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm -v; fi

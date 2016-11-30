@@ -1,6 +1,6 @@
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack + Docker
 
-## CI Build Status
+## CI Build Statuses
 | Linux          | macOS          | Windows          |License           |
 |----------------|----------------|------------------|------------------|
 |[![Linux][1]][2]|[![macOS][1]][2]|[![Windows][3]][4]|[![License][5]][6]|
@@ -13,7 +13,7 @@
 [6]: http://www.apache.org/licenses/LICENSE-2.0.html
 
 
-## Docker build Status 
+## Docker Build Statuses 
 | Courses_db          | Courses_backend          | Courses_frontend          | 
 |---------------------|--------------------------|---------------------------|
 |[![Courses_db][5]][6]|[![Courses_backend][7]][8]|[![Courses_frontend][9]][10]|
