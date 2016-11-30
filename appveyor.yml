@@ -3,7 +3,8 @@ platform:
 #  - x86
   - x64
 build:
-  verbosity: detailed
+#  verbosity: detailed
+  verbosity: quiet
 
 install:
   - cup all -v
@@ -25,7 +26,12 @@ build_script:
   - dir
 
 test_script:
-  - cd ../frontend; dir; npm run build
+  - dir
+  - cd ..
+  - dir
+  - cd frontend
+  - dir
+  - npm run build
 
 branches:
   only:
