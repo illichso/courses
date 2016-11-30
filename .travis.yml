@@ -4,29 +4,32 @@ matrix:
   include:
     - os: linux
       dist: trusty
-#    - os: osx
-#      env: OSX=10.12
-#      osx_image: xcode8.2
+    - os: osx
+      env: OSX=10.12.1
+      osx_image: xcode8.2
 
 
 script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
 
-  - docker -v
-  - docker-compose -v
-#  - docker-machine -v
-  - docker info
-  - docker images -a
-  - docker ps -a
-  - docker network ls
-  - docker volume ls
+  - chmod +x ./backend/gradlew
+  - ./backend/gradlew clean build
+  - cd frontend; npm run build -s
 
-  - docker-compose up -d
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker -v; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker-compose -v; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker info; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker images -a; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker ps -a; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker network ls; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker volume ls; fi
+
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker-compose up -d; fi
 
 after_script:
-  - docker images -a
-  - docker ps -a
-  - docker volume ls
-  - docker network ls
-  - docker network inspect courses_net
-  - docker info
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker images -a; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker ps -a; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker volume ls; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker network ls; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker network inspect courses_net; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker info; fi
