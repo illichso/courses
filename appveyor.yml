@@ -1,6 +1,6 @@
 version: 1.0.{build}
 platform:
-#  - x86
+  - x86
   - x64
 build:
 #  verbosity: detailed
@@ -15,23 +15,19 @@ install:
   - java -version
   - node -v
   - npm -v
-  - dir
 
 build_script:
-  - dir
-  - cd backend
-  - dir
-  - type gradlew.bat
-  - gradlew.bat build
-  - dir
+  - cd backend; gradlew.bat build
 
 test_script:
-  - dir
-  - cd ..
-  - dir
-  - cd frontend
-  - dir
-  - npm run build
+  - cd ../frontend; npm run build
+
+#  - dir
+#  - cd ..
+#  - dir
+#  - cd frontend
+#  - dir
+#  - npm run build
 
 branches:
   only:
