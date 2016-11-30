@@ -21,7 +21,7 @@ build_script:
   - cd backend
   - dir
   - type gradlew.bat
-  - gradlew.bat clean build
+  - gradlew.bat build
   - dir
 
 test_script:

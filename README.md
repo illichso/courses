@@ -1,9 +1,9 @@
 # Java8 + Spring Boot + Spring Data Rest + MongoDB + Gradle + Groovy + React + Redux + ES6 + Webpack + Docker
 
-## Status
-| Linux-x86_64         | macOS-x86_64          | Windows-x86_64          |License           |
-|----------------------|-----------------------|-------------------------|------------------|
-|[![Linux-86_64][1]][2]|[![macOS-x86_64][1]][2]|[![Windows-x86_64][3]][4]|[![License][5]][6]|
+## CI Build Status
+| Linux          | macOS          | Windows          |License           |
+|----------------|----------------|------------------|------------------|
+|[![Linux][1]][2]|[![macOS][1]][2]|[![Windows][3]][4]|[![License][5]][6]|
 
 [1]: https://travis-ci.org/illichso/courses.svg?branch=master
 [2]: https://travis-ci.org/illichso/courses
@@ -13,7 +13,7 @@
 [6]: http://www.apache.org/licenses/LICENSE-2.0.html
 
 
-## Docker builds  
+## Docker build Status 
 | Courses_db          | Courses_backend          | Courses_frontend          | 
 |---------------------|--------------------------|---------------------------|
 |[![Courses_db][5]][6]|[![Courses_backend][7]][8]|[![Courses_frontend][9]][10]|
