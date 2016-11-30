@@ -17,10 +17,13 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install node; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
 
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then node -v; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm -v; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get remove --purge nodejs; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then node -v; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm -v; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y nodejs; fi
-  - bash
   - java -version
   - node -v
   - npm -v
