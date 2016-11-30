@@ -13,8 +13,8 @@
 [6]: http://www.apache.org/licenses/LICENSE-2.0.html
 
 
-## Docker Build Statuses 
-| Courses_db          | Courses_backend           | Courses_frontend            | 
+## Docker Container Build Statuses 
+| MongoDB             | Java_Backend              | NodeJS_Frontend             | 
 |---------------------|---------------------------|-----------------------------|
 |[![Courses_db][7]][8]|[![Courses_backend][9]][10]|[![Courses_frontend][11]][12]|
 
@@ -24,10 +24,6 @@
 [10]: https://hub.docker.com/r/illichso/courses_backend/builds/
 [11]: https://img.shields.io/docker/automated/illichso/courses_frontend.svg
 [12]: https://hub.docker.com/r/illichso/courses_frontend/builds/
-
-[![Codecov Status](https://codecov.io/gh/illichso/courses/branch/master/graph/badge.svg)](https://codecov.io/gh/illichso/courses)
-
-[![Coveralls Status](https://coveralls.io/repos/github/illichso/courses/badge.svg?branch=master)](https://coveralls.io/github/illichso/courses?branch=master)
 
 
 #Production run
