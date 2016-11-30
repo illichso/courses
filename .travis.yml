@@ -14,8 +14,13 @@ matrix:
 script:
   - uname -a
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $(brew --repo) &&  git fetch && git reset --hard origin/master; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install node; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cleanup; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask cleanup; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install node --force; fi
 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then node -v; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm -v; fi
