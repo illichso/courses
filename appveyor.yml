@@ -1,12 +1,7 @@
 version: 1.0.{build}
-#platform:
-#  - x86
-#  - x64
-
-matrix:
-  - platform: x86
-  - platform: x64
-
+platform:
+  - x86
+  - x64
 
 init:
   - systeminfo
