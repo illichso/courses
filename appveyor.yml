@@ -17,7 +17,12 @@ install:
   - dir
 
 build_script:
-   - dir; cd backend; dir; gradlew.bat clean build; dir
+  - dir
+  - cd backend
+  - dir
+  - type gradlew.bat
+  - gradlew.bat clean build
+  - dir
 
 test_script:
   - cd frontend; dir; npm run build
