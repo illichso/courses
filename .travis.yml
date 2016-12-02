@@ -13,22 +13,13 @@ matrix:
 
 script:
   - uname -a
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then system_profiler SPSoftwareDataType; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $(brew --repo) &&  git fetch && git reset --hard origin/master; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask update; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cleanup; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask cleanup; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install node --force; fi
+  - pwd
+  - ls -la -a
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./macos.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bash ./macos.sh; fi
 
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then node -v; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm -v; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get purge --auto-remove nodejs; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then node -v; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm -v; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y nodejs; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./linux.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./linux.sh; fi
   - java -version
   - node -v
   - npm -v
