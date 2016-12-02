@@ -10,16 +10,16 @@ matrix:
       env: OSX=10.12.1
       osx_image: xcode8.2
 
-
 script:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./travis/macos.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bash ./macos.sh; fi
+
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/script.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./travis/linux/script.sh; fi
+
   - uname -a
   - pwd
   - ls -la -a
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./macos.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bash ./macos.sh; fi
-
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./linux.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./linux.sh; fi
   - java -version
   - node -v
   - npm -v
@@ -34,20 +34,9 @@ script:
   - cd ../frontend; pwd; ls -la
   - npm run build -s
 
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker -v; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker-compose -v; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker info; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker images -a; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker ps -a; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker network ls; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker volume ls; fi
-
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker-compose up -d; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_script.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./travis/linux/docker_script.sh; fi
 
 after_script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker images -a; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker ps -a; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker volume ls; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker network ls; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker network inspect courses_net; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker info; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_afterscript.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./travis/linux/docker_afterscript.sh; fi
