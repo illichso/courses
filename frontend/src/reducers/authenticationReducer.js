@@ -1,10 +1,8 @@
 import initialState from '../constants/initialState';
 import * as types from '../constants/actionTypes';
 
-const {isAuthenticated, username, errorMessage, loading} = initialState;
-
-export default function authenticationReducer(state = {isAuthenticated, username, errorMessage, loading} , action) {
-  state = Object.assign({}, state);
+export default function authenticationReducer(state =
+  {isAuthenticated, username, errorMessage, loading} , action) {
   switch (action.type) {
     case `${types.LOGIN}_FULFILLED`:
       return {
@@ -56,3 +54,5 @@ export default function authenticationReducer(state = {isAuthenticated, username
       return state;
   }
 }
+
+const {isAuthenticated, username, errorMessage, loading} = initialState;
