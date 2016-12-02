@@ -3,9 +3,6 @@ platform:
   - x86
   - x64
 
-init:
-  - systeminfo
-
 build:
   verbosity: quiet
 
@@ -25,7 +22,7 @@ build_script:
 
 test_script:
   - cd ../frontend
-  - npm run build
+  - npm run build -s
 
 branches:
   only:
