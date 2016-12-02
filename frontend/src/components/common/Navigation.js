@@ -1,32 +1,29 @@
 import React, {PropTypes} from "react";
 import {Link} from "react-router";
 import {VisibleToUser} from "../../accessors/accessors";
+import LoadingDots from './LoadingDots';
 
 const Navigation = ({loading, coursesCount, authorsCount, onLogout}) => {
   return (
     <div>
-      <AuthedLink to="/" label={`Home`}/>
-      <AuthedLink to="/authors" label={`Authors (${authorsCount})`}/>
-      <AuthedLink to="/courses" label={`Courses (${coursesCount})`}/>
-      <AuthedLink to="/about" label={`About`}/>
-      <LogoutLink to="/" label="Logout" onClick={onLogout} />
-    </div>);
+      <AuthedLink to="/" label={`Home`} useSeparator={true}/>
+      <AuthedLink to="/authors" label={`Authors (${authorsCount})`} useSeparator={true}/>
+      <AuthedLink to="/courses" label={`Courses (${coursesCount})`} useSeparator={true}/>
+      <AuthedLink to="/about" label={`About`} useSeparator={true}/>
+      <AuthedLink to="/" label="Logout" onClick={onLogout}/>
+      {loading && <LoadingDots interval={100} dots={20}/>}
+    </div>
+  );
 };
 
-const AuthedLink = VisibleToUser(({onClick, to, label}) => {
+const AuthedLink = VisibleToUser(({onClick, to, label, useSeparator}) => {
+  const separator = useSeparator ? ` | ` : null;
   return (
         <Link onClick={onClick}
               activeClassName={null}
-              to={to}>{`${label} | `}</Link>
+              to={to}>{`${label}`}{separator}</Link>
           );
 });
-
-const LogoutLink = VisibleToUser(({onClick, to ="#", label}) => {
-  return (
-        <Link onClick={onClick}
-              to={to}>{label}</Link>
-          );
-  });
 
 Navigation.propTypes = {
   loading: PropTypes.bool.isRequired,
