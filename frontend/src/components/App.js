@@ -2,7 +2,6 @@ import React, {PropTypes, Component} from 'react';
 import Navigation from './common/Navigation';
 import toastr from 'toastr';
 import {browserHistory} from 'react-router';
-import Header from './common/Header';
 import {connect} from 'react-redux';
 import {getSession, logout} from '../actions/authenticationActions';
 
@@ -29,12 +28,12 @@ class App extends Component {
   render () {
     return (
       <div className="container-fluid">
-        <Navigation onLogout={this.onLogout}/>
-        <Header
-           loading={this.props.loading}
-           coursesCount={this.props.coursesCount}
-           authorsCount={this.props.authorsCount}
-        />
+        <Navigation
+          loading={this.props.loading}
+          coursesCount={this.props.coursesCount}
+          authorsCount={this.props.authorsCount}
+          onLogout={this.onLogout}
+          />
         {this.props.children}
       </div>
     );
