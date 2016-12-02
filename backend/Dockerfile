@@ -11,8 +11,6 @@ RUN chmod +x ./gradlew
 
 RUN ./gradlew clean build
 
-RUN sh -c 'touch build/libs/courses.jar'
-
 EXPOSE 8080
 
 ENTRYPOINT ["java", \
