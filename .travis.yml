@@ -33,6 +33,7 @@ script:
   - pwd; ./gradlew clean build
   - cd ../frontend; pwd; ls -la
   - npm run build -s
+  - cd ..; pwd; ls -la
 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_script.sh; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./travis/linux/docker_script.sh; fi
