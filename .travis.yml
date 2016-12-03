@@ -24,6 +24,7 @@ script:
   - npm -v
   - sudo npm install npm@latest -g
   - npm cache clean
+  - npm config set loglevel error
   - node -v
   - npm -v
 
