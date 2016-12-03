@@ -3,12 +3,12 @@
 system_profiler SPSoftwareDataType;
 echo "Checking if nodejs is installed"
 node -v;
-echo "!!! locating node everywhere"
-sudo find / -name "node";
-echo "!!! locating node_modules everywhere"
-sudo find / -name "node_modules";
-echo "!!! locating npm* everywhere"
-sudo find / -name "npm*";
+#echo "!!! locating node everywhere"
+#sudo find / -name "node";
+#echo "!!! locating node_modules everywhere"
+#sudo find / -name "node_modules";
+#echo "!!! locating npm* everywhere"
+#sudo find / -name "npm*";
 echo "Removing previously installed nodejs"
 sudo rm -rf /usr/local/lib/node*;
 sudo rm -rf /usr/local/include/node*;
@@ -57,12 +57,12 @@ sudo rm -rf /usr/local/Cellar/node;
 echo "Checking if nodejs is still installed"
 node -v;
 npm -v;
-echo "??? locating node everywhere"
-sudo find / -name "node";
-echo "??? locating node_modules everywhere"
-sudo find / -name "node_modules";
-echo "??? locating npm* everywhere"
-sudo find / -name "npm*";
+#echo "??? locating node everywhere"
+#sudo find / -name "node";
+#echo "??? locating node_modules everywhere"
+#sudo find / -name "node_modules";
+#echo "??? locating npm* everywhere"
+#sudo find / -name "npm*";
 
 echo "Updating brew"
 cd "$(brew --repo)" && git fetch && git reset --hard origin/master;
