@@ -3,8 +3,10 @@
 system_profiler SPSoftwareDataType;
 echo "Checking if nodejs is installed"
 node -v;
-echo "!!! locating node* everywhere"
-sudo find / -name "node*";
+echo "!!! locating node everywhere"
+sudo find / -name "node";
+echo "!!! locating node_modules everywhere"
+sudo find / -name "node_modules";
 echo "!!! locating npm* everywhere"
 sudo find / -name "npm*";
 echo "Removing previously installed nodejs"
@@ -50,11 +52,15 @@ sudo rm -rf /opt/local/lib/node*;
 sudo rm -rf /usr/bin/npm;
 sudo rm -rf /usr/local/share/systemtap/tapset/node.stp;
 sudo rm -rf /var/db/receipts/org.nodejs.*;
+sudo rm -rf ~/.nvm;
+sudo rm -rf /usr/local/Cellar/node;
 echo "Checking if nodejs is still installed"
 node -v;
 npm -v;
-echo "??? locating node* everywhere"
-sudo find / -name "node*";
+echo "??? locating node everywhere"
+sudo find / -name "node";
+echo "??? locating node_modules everywhere"
+sudo find / -name "node_modules";
 echo "??? locating npm* everywhere"
 sudo find / -name "npm*";
 
