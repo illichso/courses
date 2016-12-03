@@ -21,8 +21,8 @@ script:
 
   - uname -a
   - java -version
-  - npm cache clean
-  - npm install npm@latest -g
+  - npm -v
+  - sudo npm install npm@latest -g
   - npm cache clean
   - node -v
   - npm -v
