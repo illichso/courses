@@ -22,8 +22,9 @@ script:
   - uname -a
   - java -version
   - npm -v
-  - npm config set loglevel error
-  - npm install npm@latest -g
+  - npm config set loglevel silent
+  - npm config ls
+  - sudo npm install npm@latest -g
   - npm cache clean
   - node -v
   - npm -v
