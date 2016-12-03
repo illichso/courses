@@ -5,9 +5,6 @@ node -v;
 npm -v;
 echo "Finding and deleting node, node_modules, npm";
 sudo find / -name "nvm" -exec rm -r "{}" \;
-
-
-sudo find / -name "nvm" -exec rm -r "{}" \;
 sudo find / -name "nvm-*" -exec rm -r "{}" \;
 sudo find / -name "nvm_*" -exec rm -r "{}" \;
 sudo find / -name "nvm.*" -exec rm -r "{}" \;
