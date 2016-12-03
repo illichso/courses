@@ -21,7 +21,8 @@ script:
 
   - uname -a
   - java -version
-  - npm install -s npm@latest -g
+  - npm cache clean
+  - npm install npm@latest -g
   - npm cache clean
   - node -v
   - npm -v
