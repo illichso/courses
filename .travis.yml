@@ -32,7 +32,7 @@ script:
   - cd backend; pwd; ls -la
   - chmod +x ./gradlew
   - pwd; ./gradlew clean build
-  - cd ./frontend; pwd; ls -la
+  - cd ../frontend; pwd; ls -la
   - npm run build -s
   - cd ..; pwd; ls -la
 
