@@ -24,14 +24,18 @@ script:
   - npm -v
   - npm config set loglevel silent
   - npm config ls
-  - sudo npm install npm@latest -g
+  - sudo npm install npm@latest -g &>/dev/null
   - npm cache clean
   - node -v
   - npm -v
 
-  - cd backend; pwd; ls -la
-  - chmod +x ./gradlew
-  - pwd; ./gradlew clean build
+#  - cd backend; pwd; ls -la
+#  - chmod +x ./gradlew
+#  - pwd; ./gradlew clean build
+
+  - chmod +x ./backend/gradlew
+  - chmod +x ./backend/gradlew clean build
+
   - cd ../frontend; pwd; ls -la
   - npm run build -s
   - cd ..; pwd; ls -la
