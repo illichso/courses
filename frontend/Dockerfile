@@ -11,8 +11,8 @@ COPY webpack.config.prod.js/ ./
 COPY package.json/ ./
 RUN chmod +x ./package.json
 
-RUN ["/bin/bash", "-c", "npm run build -s"]
+RUN ["/bin/sh", "-c", "npm run build -s"]
 
 EXPOSE 3000
 
-ENTRYPOINT ["/bin/bash", "-c", "npm run dockerStart -s"]
+ENTRYPOINT ["/bin/sh", "-c", "npm run dockerStart -s"]
