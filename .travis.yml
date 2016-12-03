@@ -11,15 +11,16 @@ matrix:
       osx_image: xcode8.2
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./travis/macos.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bash ./macos.sh; fi
+  - pwd
+  - ls -la -a
+
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./travis/macos/script.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bash ./travis/macos/script.sh; fi
 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/script.sh; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./travis/linux/script.sh; fi
 
   - uname -a
-  - pwd
-  - ls -la -a
   - java -version
   - node -v
   - npm -v
