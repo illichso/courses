@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 
-bash ../delete_node.sh;
+pwd;
+ls -la -a;
+bash ./travis/delete_node.sh;
 
-chmod +x ./install_node.sh;
-bash ./install_node.sh;
+pwd;
+ls -la -a;
+chmod +x ./travis/linux/install_node.sh;
+bash ./travis/linux/install_node.sh;
