@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 system_profiler SPSoftwareDataType;
 echo "Checking if nodejs is installed"

@@ -15,10 +15,10 @@ script:
   - ls -la -a
 
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./travis/macos/script.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bash ./travis/macos/script.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh ./travis/macos/script.sh; fi
 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/script.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./travis/linux/script.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/script.sh; fi
 
   - uname -a
   - java -version
@@ -37,8 +37,8 @@ script:
   - cd ..; pwd; ls -la
 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_script.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./travis/linux/docker_script.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/docker_script.sh; fi
 
 after_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_afterscript.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then bash ./travis/linux/docker_afterscript.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/docker_afterscript.sh; fi
