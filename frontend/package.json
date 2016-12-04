@@ -20,7 +20,7 @@
     "install-all": "npm install --loglevel=silent",
     "install-silent": "npm install &>/dev/null",
     "post-install": "npm-run-all -p clean-dist lint test",
-    "prebuild": "npm run install-all && npm run post-install",
+    "prebuild": "npm run install-silent && npm run post-install",
     "build": "babel-node tools/build.js",
     "test": "mocha tools/testSetup.js \"src/**/*.test.js\" --reporter progress",
     "test:watch": "npm run test -- --watch"
