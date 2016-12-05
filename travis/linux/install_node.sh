@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 echo "Running sudo apt-get -qq update > /dev/null";
-sudo apt-get -qq update > /dev/null;
+sudo apt-get -qq update -y >/dev/null;
 
 echo "Running sudo apt-get -qq purge --auto-remove nodejs > /dev/null";
 sudo apt-get -qq purge --auto-remove nodejs > /dev/null;
