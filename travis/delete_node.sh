@@ -5,8 +5,13 @@ node -v;
 npm -v;
 echo "Finding and deleting node, node_modules, npm";
 
+echo "Launching sudo find / -name 'node' -exec rm -r '{}' \;"
 sudo find / -name "node" -exec rm -r "{}" \;
+
+echo "Launching sudo find / -name 'node_modules' -exec rm -r '{}' \;"
 sudo find / -name "node_modules" -exec rm -r "{}" \;
+
+echo "Launching sudo find / -name 'npm*' -exec rm -r '{}' \;"
 sudo find / -name "npm*" -exec rm -r "{}" \;
 
 echo "Finding node after deleting";
