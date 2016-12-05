@@ -6,8 +6,8 @@ sudo apt-get -qq update -y >/dev/null;
 echo "Running sudo apt-get -qq purge --auto-remove nodejs > /dev/null";
 sudo apt-get -qq purge --auto-remove nodejs > /dev/null;
 
-echo "Running sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -;";
-sudo curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -;
+echo "Running sudo curl -sL https://deb.nodesource.com/setup_7.x > /dev/null | sudo -E bash -;";
+sudo curl -sL https://deb.nodesource.com/setup_7.x > /dev/null | sudo -E bash -;
 
 echo "Running sudo apt-get -qq install -y nodejs > /dev/null";
 sudo apt-get -qq install -y nodejs > /dev/null;
