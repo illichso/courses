@@ -61,6 +61,23 @@ sudo rm -rf /usr/bin/npm;
 sudo rm -rf /usr/local/share/systemtap/tapset/node.stp;
 sudo rm -rf /var/db/receipts/org.nodejs.*;
 
+echo "Find node after deleting";
+
+echo "sudo find / -name '.npm'"
+sudo find / -name ".npm"
+
+echo "sudo find / -name 'npm*'"
+sudo find / -name "npm*"
+
+echo "sudo find / -name 'node_modules'"
+sudo find / -name "node_modules"
+
+echo "sudo find / -name 'node.*'"
+sudo find / -name "node.*"
+
+echo "sudo find / -name 'node'"
+sudo find / -name "node"
+
 
 
 #echo "Launching sudo find / -name 'node' -exec rm -r '{}' \;"
