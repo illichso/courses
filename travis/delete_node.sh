@@ -3,7 +3,6 @@
 echo "Finding node before deleting";
 node -v;
 npm -v;
-#echo "Finding and deleting node, node_modules, npm";
 
 echo "Removing previously installed nodejs"
 sudo rm -rf /usr/local/lib/node*;

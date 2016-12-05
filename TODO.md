@@ -1,6 +1,6 @@
 ####Frontend:
 ```
-1. Make logout button in Header invisible if user is not logged in. And make login button invisible if user is logged in.
+1. (Done) Make logout button in Header invisible if user is not logged in. And make login button invisible if user is logged in.
 2. Make good invalid login message.
 3. Create add users page by admin.
 ```
