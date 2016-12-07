@@ -1,7 +1,7 @@
 ####Frontend:
 ```
 1. (Done) Make logout button in Header invisible if user is not logged in. And make login button invisible if user is logged in.
-2. Delete inserted by user username and password after login attempt (successful or not).
+2. (Done) Delete inserted by user username and password after login attempt (successful or not).
 3. Set cursor initially on username tesinout.
 3. Make good invalid login message.
 4. Fix bug - on refresh page redirects to home page.

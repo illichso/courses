@@ -5,19 +5,39 @@ import {bindActionCreators} from 'redux';
 import * as authenticationActions from "../../actions/authenticationActions";
 import LoginForm from './LoginForm';
 import {browserHistory} from 'react-router';
+import {getEmptyCredentials} from '../../constants/emptyEntities';
 
 class LoginPage extends Component {
 
   constructor(props, context) {
     super(props, context);
-
     this.state = {
-      credentials: {login: "", password: ""},
+      credentials:  getEmptyCredentials()
     };
 
     this.onChange = this.onChange.bind(this);
     this.onLogin = this.onLogin.bind(this);
-    this.redirectAfterSuccess = this.redirectAfterSuccess.bind(this);
+    this.redirectAfterLoginSuccess = this.redirectAfterLoginSuccess.bind(this);
+    this.clearCredentials = this.clearCredentials.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.credentials &&
+      this.props.credentials.username != nextProps.credentials.username &&
+      this.props.credentials.password != nextProps.credentials.password ) {
+      // Necessary to populate from when existing author if loaded directly.
+      this.setState({credentials: Object.assign({}, nextProps.credentials)});
+    }
+  }
+
+  componentWillUnmount(){
+    this.clearCredentials();
+  }
+
+  clearCredentials() {
+    this.setState({
+      credentials:  getEmptyCredentials()
+    });
   }
 
   onChange(event) {
@@ -28,28 +48,20 @@ class LoginPage extends Component {
   }
 
   onLogin(event) {
-    const {login, password} = this.state.credentials;
+    const {username, password} = this.state.credentials;
     event.preventDefault();
-    this.props.actions.login(login, password)
+    this.props.actions.login(username, password)
     .then(() => {
-      this.redirectAfterSuccess();
+      this.redirectAfterLoginSuccess();
       toastr.success("Login success!");
     }).catch(error => {
-      console.log(error);
-      toastr.error(error);
+      this.clearCredentials();
+      toastr.error("Login Failed. The username or password may be incorrect.");
       throw(error);
     });
   }
 
-  onLogout(event) {
-    event.preventDefault();
-    this.props.actions.logout().then(() => {
-      // redirectAfterSuccess(getState);
-      toastr.success("Logout success!");
-    }).catch(error => toastr.error(error));
-  }
-
-   redirectAfterSuccess() {
+   redirectAfterLoginSuccess() {
     const location = this.props.location;
     if (location.query && location.query.redirect) {
       browserHistory.push(location.query.redirect);
@@ -71,7 +83,8 @@ class LoginPage extends Component {
 
 LoginPage.propTypes = {
   actions: PropTypes.object,
-  location: PropTypes.object
+  location: PropTypes.object,
+  credentials: PropTypes.object
 };
 
 

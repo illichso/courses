@@ -7,9 +7,9 @@ const LoginForm = ({credentials, onChange, onLogin}) => {
     <form>
       <h3>Welcome to courses</h3>
       <TextInput
-        name="login"
+        name="username"
         label="Username"
-        value={credentials.user}
+        value={credentials.username}
         onChange={onChange}
       />
 
@@ -32,7 +32,7 @@ const LoginForm = ({credentials, onChange, onLogin}) => {
 };
 
 LoginForm.propTypes = {
-  credentials: PropTypes.object.isRequired,
+  credentials: PropTypes.object,
   onChange: PropTypes.func.isRequired,
   onLogin: PropTypes.func.isRequired,
 };
