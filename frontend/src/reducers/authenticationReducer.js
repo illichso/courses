@@ -1,37 +1,38 @@
-import initialState from '../constants/initialState';
+import initialAuthValues from '../constants/initialAuthValues';
 import * as types from '../constants/actionTypes';
 
-export default function authenticationReducer(state =
-  {isAuthenticated, username, errorMessage, loading} , action) {
+const {isAuthenticated, username, errorMessage, loading} = initialAuthValues;
+
+export default function authenticationReducer(state = {isAuthenticated, username, errorMessage, loading} , action) {
   switch (action.type) {
     case `${types.LOGIN}_FULFILLED`:
       return {
-        state,
+        ...state,
         isAuthenticated: action.payload.data.authenticated,
         username: action.payload.data.userName,
         errorMessage: null
       };
     case `${types.LOGIN}_REJECTED`:
       return {
-        state,
+        ...state,
         isAuthenticated: false,
         username: null,
         errorMessage: action.payload.message
       };
     case `${types.LOGOUT}_FULFILLED`:
       return {
-        state,
+        ...state,
         isAuthenticated: false,
         username: null
       };
     case `${types.GET_SESSION}_PENDING`:
       return {
-        state,
+        ...state,
         loading: true
       };
     case `${types.GET_SESSION}_FULFILLED`:
       return {
-        state,
+        ...state,
         isAuthenticated: action.payload.data.authenticated || false,
         username: action.payload.data.userName,
         errorMessage: null,
@@ -39,7 +40,7 @@ export default function authenticationReducer(state =
       };
     case `${types.GET_SESSION}_REJECTED`:
       return {
-        state,
+        ...state,
         isAuthenticated: false,
         username: null,
         debugError: action.payload,
@@ -47,12 +48,10 @@ export default function authenticationReducer(state =
       };
     case types.ERROR_MESSAGE:
       return {
-        state,
+        ...state,
         errorMessage: action.message
       };
     default:
       return state;
   }
 }
-
-const {isAuthenticated, username, errorMessage, loading} = initialState;

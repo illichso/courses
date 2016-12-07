@@ -10,11 +10,7 @@ const rootReducer = combineReducers({
   courses,
   authors,
   ajaxCallsInProgress,
-  routing: routerReducer,
-  isAuthenticated: (state = {}) => state,
-  username: (state = {}) => state,
-  errorMessage: (state = {}) => state,
-  loading: (state = {}) => state
+  routing: routerReducer
 });
 
 export default rootReducer;
