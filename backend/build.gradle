@@ -51,6 +51,10 @@ dependencies {
     testCompile 'org.spockframework:spock-spring:1.1-groovy-2.4-rc-3'
 }
 
+jar {
+    baseName = 'courses'
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '3.2.1'
 }
