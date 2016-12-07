@@ -1,7 +1,7 @@
-import initialAuthValues from '../constants/initialAuthValues';
+import nitialAuthValues from '../constants/nitialAuthValues';
 import * as types from '../constants/actionTypes';
 
-const {isAuthenticated, username, errorMessage, loading} = initialAuthValues;
+const {isAuthenticated, username, errorMessage, loading} = nitialAuthValues;
 
 export default function authenticationReducer(state = {isAuthenticated, username, errorMessage, loading} , action) {
   switch (action.type) {
