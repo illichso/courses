@@ -3,7 +3,8 @@
 1. (Done) Make logout button in Header invisible if user is not logged in. And make login button invisible if user is logged in.
 2. Delete inserted by user username and password after login attempt (successful or not).
 3. Make good invalid login message.
-4. Create add users page by admin.
+4. Fix bug - on refresh page redirects to home page.
+5. Create add users page by admin.
 ```
 
 ####Backend:
