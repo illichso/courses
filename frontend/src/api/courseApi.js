@@ -15,7 +15,6 @@ class CourseApi {
   }
 
   static deleteCourse(courseId) {
-    // return axios.put(`/api/courses/${courseId}`, {});
     return axios.delete(`/api/courses/${courseId}`);
   }
 }
