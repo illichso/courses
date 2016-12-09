@@ -6,4 +6,4 @@ export const getEmptyCredentials = () => {
     username: '',
     password: ''
   };
-}
+};
