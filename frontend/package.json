@@ -8,7 +8,7 @@
   "scripts": {
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all -p start-message remove-dist",
-    "start": "npm-run-all -p test:watch open:src lint:watch",
+    "start": "npm-run-all -p check:security test:watch open:src lint:watch",
     "dockerStart": "npm-run-all -p test:watch open:dockerSrc lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "open:dockerSrc": "babel-node tools/dockerServer.js",
