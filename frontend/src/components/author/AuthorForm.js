@@ -10,7 +10,8 @@ const AuthorForm = ({ author, onSave, onChange, saving, errors}) => {
       label="First Name"
       value={author.firstName}
       onChange={onChange}
-      error={errors.firstName}/>
+      error={errors.firstName}
+      focus={true}/>
 
       <TextInput
       name="lastName"
