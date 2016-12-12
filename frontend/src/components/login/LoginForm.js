@@ -11,6 +11,7 @@ const LoginForm = ({credentials, onChange, onLogin}) => {
         label="Username"
         value={credentials.username}
         onChange={onChange}
+        focus={true}
       />
 
       <PasswordInput
