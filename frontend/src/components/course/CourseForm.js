@@ -11,7 +11,8 @@ const CourseForm = ({ course, allAuthors, onSave, onChange, saving, errors}) => 
       label="Title"
       value={course.title}
       onChange={onChange}
-      error={errors.title}/>
+      error={errors.title}
+      focus={true}/>
 
       <SelectInput
       name="authorId"
