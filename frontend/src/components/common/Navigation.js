@@ -2,6 +2,7 @@ import React, {PropTypes} from "react";
 import {Link} from "react-router";
 import {VisibleToUser} from "../../accessors/accessors";
 import LoadingDots from './LoadingDots';
+import {AuthedLink} from './AuthedLink';
 
 const Navigation = ({loading, coursesCount, authorsCount, onLogout}) => {
   return (
@@ -15,15 +16,6 @@ const Navigation = ({loading, coursesCount, authorsCount, onLogout}) => {
     </div>
   );
 };
-
-const AuthedLink = VisibleToUser(({onClick, to, label, useSeparator}) => {
-  const separator = useSeparator ? ` | ` : null;
-  return (
-        <Link onClick={onClick}
-              activeClassName={null}
-              to={to}>{`${label}`}{separator}</Link>
-          );
-});
 
 Navigation.propTypes = {
   loading: PropTypes.bool.isRequired,
