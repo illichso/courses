@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from 'redux';
 import * as authenticationActions from "../../actions/authenticationActions";
 import LoginForm from './LoginForm';
+import {redirectHome} from '../common/Navigation';
 import {browserHistory} from 'react-router';
 import {getEmptyCredentials} from '../../constants/emptyEntities';
 
@@ -66,7 +67,7 @@ class LoginPage extends Component {
     if (location.query && location.query.redirect) {
       browserHistory.push(location.query.redirect);
     } else {
-      browserHistory.push('/');
+      redirectHome();
     }
    }
 
