@@ -4,7 +4,7 @@ import {VisibleToUser} from "../../accessors/accessors";
 import LoadingDots from './LoadingDots';
 import {AuthedLink} from './AuthedLink';
 
-const Navigation = ({loading, coursesCount, authorsCount, onLogout}) => {
+const Header = ({loading, coursesCount, authorsCount, onLogout}) => {
   return (
     <div>
       <AuthedLink to="/" label={`Home`} useSeparator={true}/>
@@ -17,11 +17,11 @@ const Navigation = ({loading, coursesCount, authorsCount, onLogout}) => {
   );
 };
 
-Navigation.propTypes = {
+Header.propTypes = {
   loading: PropTypes.bool.isRequired,
   coursesCount: PropTypes.number.isRequired,
   authorsCount: PropTypes.number.isRequired,
   onLogout: React.PropTypes.func.isRequired
 };
 
-export default Navigation;
+export default Header;

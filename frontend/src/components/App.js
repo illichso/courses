@@ -1,5 +1,5 @@
 import React, {PropTypes, Component} from 'react';
-import Navigation from './common/Navigation';
+import Header from './common/Header';
 import toastr from 'toastr';
 import {browserHistory} from 'react-router';
 import {connect} from 'react-redux';
@@ -28,7 +28,7 @@ class App extends Component {
   render () {
     return (
       <div className="container-fluid">
-        <Navigation
+        <Header
           loading={this.props.loading}
           coursesCount={this.props.coursesCount}
           authorsCount={this.props.authorsCount}
