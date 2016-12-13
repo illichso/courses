@@ -1,6 +1,5 @@
 import React, {PropTypes} from "react";
 import {Link} from "react-router";
-import {VisibleToUser} from "../../accessors/accessors";
 import LoadingDots from './LoadingDots';
 import {AuthedLink} from './AuthedLink';
 
