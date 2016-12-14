@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {pushState} from 'redux-router';
 
@@ -30,10 +30,18 @@ export function requireAuthentication(Component) {
                         : null
                     }
                 </div>
-            )
+            );
 
         }
     }
+
+    AuthenticatedComponent.propTypes = {
+        actions: PropTypes.object,
+        location: PropTypes.object,
+        credentials: PropTypes.object,
+        isAuthenticated: PropTypes.bool,
+        dispatch: PropTypes.func
+    };
 
     const mapStateToProps = (state) => ({
         token: state.auth.token,
