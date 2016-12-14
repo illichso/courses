@@ -1,6 +1,10 @@
 language: java
 sudo: required
 
+branches:
+  only:
+  - master
+
 matrix:
   include:
     - os: linux
