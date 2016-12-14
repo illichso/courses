@@ -1,7 +1,10 @@
+import {browserHistory} from 'react-router';
 import InitialAuthValues from '../constants/InitialAuthValues';
 import * as types from '../constants/actionTypes';
 
 const {isAuthenticated, username, errorMessage, loading} = InitialAuthValues;
+
+const ERROR_MESSAGE = 'authentication/ERROR_MESSAGE';
 
 export default function authenticationReducer(state = {isAuthenticated, username, errorMessage, loading} , action) {
   switch (action.type) {
@@ -55,3 +58,16 @@ export default function authenticationReducer(state = {isAuthenticated, username
       return state;
   }
 }
+
+export function displayAuthError(message) {
+  return {type: ERROR_MESSAGE, message};
+}
+
+
+export const redirectToLoginWithMessage = messageKey => {
+  return (dispatch, getState) => {
+    const currentPath = getState().routing.locationBeforeTransitions.pathname;
+    dispatch(displayAuthError(messageKey));
+    browserHistory.replace({pathname: '/login', state: {nextPathname: currentPath}});
+  };
+};
