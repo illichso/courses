@@ -7,29 +7,62 @@ import AuthorsPage from './components/author/AuthorsPage';
 import CoursesPage from './components/course/CoursesPage';
 import ManageAuthorPage from './components/author/ManageAuthorPage';
 import ManageCoursePage from './components/course/ManageCoursePage';
-import LoginPage from "./components/login/LoginPage";
-import LogoutPage from "./components/login/LogoutPage";
+import LoginPage from './components/login/LoginPage';
+import LogoutPage from './components/login/LogoutPage';
+import LoginSuccess from './components/login/LoginSuccess';
+import NotFound from './components/common/NotFound';
+import {
+  isLoaded as isAuthLoaded,
+  load as loadAuth } from './reducers/authenticationReducer';
 import {
   UserIsAuthenticated,
   UserIsNotAuthenticated,
   VisibleToUser
 } from './accessors/accessors';
 
-export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={UserIsAuthenticated(HomePage)}/>
+export default (store) => {
+  const requireLogin = (nextState, replace, cb) => {
+    function checkAuth() {
+      const { auth: { user }} = store.getState();
+      if (!user) {
+        // oops, not logged in, so can't be here!
+        replace('/');
+      }
+      cb();
+    }
 
-    <Route path="authors" component={UserIsAuthenticated(AuthorsPage)}/>
-    <Route path="author" component={UserIsAuthenticated(ManageAuthorPage)}/>
-    <Route path="author/:id" component={UserIsAuthenticated(ManageAuthorPage)}/>
+    if (!isAuthLoaded(store.getState())) {
+      store.dispatch(loadAuth()).then(checkAuth);
+    } else {
+      checkAuth();
+    }
+  };
 
-    <Route path="courses" component={UserIsAuthenticated(CoursesPage)}/>
-    <Route path="course" component={UserIsAuthenticated(ManageCoursePage)}/>
-    <Route path="course/:id" component={UserIsAuthenticated(ManageCoursePage)}/>
+  /**
+   * Please keep routes in alphabetical order
+   */
+  return (
+    <Route path="/" component={App}>
 
-    <Route path="about" component={UserIsAuthenticated(AboutPage)}/>
+      <IndexRoute component={HomePage}/>
 
-    <Route path="login" component={UserIsNotAuthenticated(LoginPage)}/>
-    <Route path="logout" component={UserIsAuthenticated(LogoutPage)}/>
-  </Route>
-);
+      <Route onEnter={requireLogin}>
+        <Route path="loginSuccess" component={LoginSuccess}/>
+      </Route>
+
+      <Route path="authors" component={AuthorsPage}/>
+      <Route path="author" component={ManageAuthorPage}/>
+      <Route path="author/:id" component={ManageAuthorPage}/>
+
+      <Route path="courses" component={CoursesPage}/>
+      <Route path="course" component={ManageCoursePage}/>
+      <Route path="course/:id" component={ManageCoursePage}/>
+
+      <Route path="about" component={AboutPage}/>
+      <Route path="login" component={LoginPage}/>
+      <Route path="logout" component={LogoutPage}/>
+
+      <Route path="*" component={NotFound} status={404} />
+    </Route>
+  );
+};
