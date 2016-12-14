@@ -14,22 +14,41 @@ import {
   UserIsNotAuthenticated,
   VisibleToUser
 } from './accessors/accessors';
+import {requireAuthentication} from './components/login/AuthenticatedComponent';
 
 export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={UserIsAuthenticated(HomePage)}/>
+<Route path="/" component={App}>
+    <IndexRoute component={HomePage}/>
+    <Route path="login" component={LoginPage}/>
 
-    <Route path="authors" component={UserIsAuthenticated(AuthorsPage)}/>
-    <Route path="author" component={UserIsAuthenticated(ManageAuthorPage)}/>
-    <Route path="author/:id" component={UserIsAuthenticated(ManageAuthorPage)}/>
+    <Route path="authors" component={requireAuthentication(AuthorsPage)}/>
+    <Route path="author" component={requireAuthentication(ManageAuthorPage)}/>
+    <Route path="author/:id" component={requireAuthentication(ManageAuthorPage)}/>
 
-    <Route path="courses" component={UserIsAuthenticated(CoursesPage)}/>
-    <Route path="course" component={UserIsAuthenticated(ManageCoursePage)}/>
-    <Route path="course/:id" component={UserIsAuthenticated(ManageCoursePage)}/>
+    <Route path="courses" component={requireAuthentication(CoursesPage)}/>
+    <Route path="course" component={requireAuthentication(ManageCoursePage)}/>
+    <Route path="course/:id" component={requireAuthentication(ManageCoursePage)}/>
 
-    <Route path="about" component={UserIsAuthenticated(AboutPage)}/>
+    <Route path="about" component={requireAuthentication(AboutPage)}/>
 
-    <Route path="login" component={UserIsNotAuthenticated(LoginPage)}/>
-    <Route path="logout" component={UserIsAuthenticated(LogoutPage)}/>
-  </Route>
+</Route>
+
+
+
+  // <Route path="/" component={App}>
+  //   <IndexRoute component={UserIsAuthenticated(HomePage)}/>
+  //
+  //   <Route path="authors" component={UserIsAuthenticated(AuthorsPage)}/>
+  //   <Route path="author" component={UserIsAuthenticated(ManageAuthorPage)}/>
+  //   <Route path="author/:id" component={UserIsAuthenticated(ManageAuthorPage)}/>
+  //
+  //   <Route path="courses" component={UserIsAuthenticated(CoursesPage)}/>
+  //   <Route path="course" component={UserIsAuthenticated(ManageCoursePage)}/>
+  //   <Route path="course/:id" component={UserIsAuthenticated(ManageCoursePage)}/>
+  //
+  //   <Route path="about" component={UserIsAuthenticated(AboutPage)}/>
+  //
+  //   <Route path="login" component={UserIsNotAuthenticated(LoginPage)}/>
+  //   <Route path="logout" component={UserIsAuthenticated(LogoutPage)}/>
+  // </Route>
 );
