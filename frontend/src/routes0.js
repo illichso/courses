@@ -26,7 +26,7 @@ export default (
   <Router history={browserHistory}>
       <HomeRoute path="/" component={App}>
         <IndexRoute component={HomePage} />
-        <LoginRoute path="login"component={LoginPage} />
+        <LoginRoute path="/login"component={LoginPage} />
         <Route path="about" component={AboutPage}/>
         <AuthenticatedRoute>
           <Route path="authors" component={AuthorsPage}/>
