@@ -1,16 +1,16 @@
-import axios from 'axios';
+import axios from "axios";
 
 class CourseApi {
 
   static getAllCourses() {
-    return axios.get('/api/courses');
+    return axios.get("/api/courses");
   }
 
   static saveCourse(course) {
     if(course.id) {
       return axios.put(`/api/courses/${course.id}`, course);
     } else {
-      return axios.post('/api/courses', course);
+      return axios.post("/api/courses", course);
     }
   }
 

@@ -1,12 +1,12 @@
-import React, {Component, PropTypes} from 'react';
-import toastr from 'toastr';
+import React, {Component, PropTypes} from "react";
+import toastr from "toastr";
 import {connect} from "react-redux";
-import {bindActionCreators} from 'redux';
+import {bindActionCreators} from "redux";
 import * as authenticationActions from "../../actions/authenticationActions";
-import LoginForm from './LoginForm';
-import {redirectHome} from '../common/Navigation';
-import {browserHistory} from 'react-router';
-import {getEmptyCredentials} from '../../constants/emptyEntities';
+import LoginForm from "./LoginForm";
+import {redirectHome} from "../common/Navigation";
+import {browserHistory} from "react-router";
+import {getEmptyCredentials} from "../../constants/emptyEntities";
 
 class LoginPage extends Component {
 

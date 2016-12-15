@@ -2,26 +2,26 @@ export const extractEmbeddedCourse = course => {
   if(course) {
     return course.data;
   }
-  return '';
+  return "";
 };
 
 export const extractEmbeddedCourseList = courses => {
   if(courses) {
     return courses.data._embedded.courses;
   }
-  return '';
+  return "";
 };
 
 export const extractEmbeddedAuthor = author => {
   if(author) {
     return author.data;
   }
-  return '';
+  return "";
 };
 
 export const extractEmbeddedAuthorList = authors => {
   if(authors) {
     return authors.data._embedded.authors;
   }
-  return '';
+  return "";
 };

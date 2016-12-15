@@ -1,9 +1,9 @@
-import React, {PropTypes, Component} from 'react';
-import Header from './common/Header';
-import toastr from 'toastr';
-import {redirectHome} from './common/Navigation';
-import {connect} from 'react-redux';
-import {getSession, logout} from '../actions/authenticationActions';
+import React, {PropTypes, Component} from "react";
+import Header from "./common/Header";
+import toastr from "toastr";
+import {redirectHome} from "./common/Navigation";
+import {connect} from "react-redux";
+import {getSession, logout} from "../actions/authenticationActions";
 
 class App extends Component {
 

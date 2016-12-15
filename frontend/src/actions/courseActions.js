@@ -1,7 +1,7 @@
-import * as types from '../constants/actionTypes';
-import {extractEmbeddedCourse, extractEmbeddedCourseList} from './HALExtractor';
-import courseApi from '../api/courseApi';
-import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
+import * as types from "../constants/actionTypes";
+import {extractEmbeddedCourse, extractEmbeddedCourseList} from "./HALExtractor";
+import courseApi from "../api/courseApi";
+import {beginAjaxCall, ajaxCallError} from "./ajaxStatusActions";
 
 export const loadCoursesSuccess = courses => {
   return {type: types.LOAD_COURSES_SUCCESS, courses};

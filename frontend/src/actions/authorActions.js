@@ -1,7 +1,7 @@
-import * as types from '../constants/actionTypes';
-import authorApi from '../api/authorApi';
-import {extractEmbeddedAuthor, extractEmbeddedAuthorList} from './HALExtractor';
-import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
+import * as types from "../constants/actionTypes";
+import authorApi from "../api/authorApi";
+import {extractEmbeddedAuthor, extractEmbeddedAuthorList} from "./HALExtractor";
+import {beginAjaxCall, ajaxCallError} from "./ajaxStatusActions";
 
 export const loadAuthorsSuccess = authors => {
   return {type: types.LOAD_AUTHORS_SUCCESS, authors};

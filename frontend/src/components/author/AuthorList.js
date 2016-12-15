@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import AuthorListRow from './AuthorListRow';
+import React, {PropTypes} from "react";
+import AuthorListRow from "./AuthorListRow";
 
 const AuthorList = ({authors, onDelete, deleting}) => {
   return (

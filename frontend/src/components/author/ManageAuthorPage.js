@@ -1,16 +1,16 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
-import {Router, Route, withRouter} from 'react-router';
-import {bindActionCreators} from 'redux';
-import * as authorActions from '../../actions/authorActions';
-import AuthorForm  from './AuthorForm';
-import toastr from 'toastr';
-import {getById, getFullAuthorName} from '../../selectors/selectors';
-import {minimumLength} from '../common/Validation';
-import {emptyAuthor} from '../../constants/emptyEntities';
+import React, {PropTypes, Component} from "react";
+import {connect} from "react-redux";
+import {Router, Route, withRouter} from "react-router";
+import {bindActionCreators} from "redux";
+import * as authorActions from "../../actions/authorActions";
+import AuthorForm  from "./AuthorForm";
+import toastr from "toastr";
+import {getById, getFullAuthorName} from "../../selectors/selectors";
+import {minimumLength} from "../common/Validation";
+import {emptyAuthor} from "../../constants/emptyEntities";
 
-export const firstNameErrorMsg = 'Author should have a first name.';
-export const lastNameErrorMsg = 'Author should have a last name.';
+export const firstNameErrorMsg = "Author should have a first name.";
+export const lastNameErrorMsg = "Author should have a last name.";
 
 
 export class ManageAuthorPage extends Component {
@@ -46,7 +46,7 @@ export class ManageAuthorPage extends Component {
       // return false to prevent a transition w/o prompting the user,
       // or return a string to allow the user to decide:
       if (!this.state.isSaved){
-        return 'Your work is not saved! Are you sure you want to leave?';
+        return "Your work is not saved! Are you sure you want to leave?";
       }
     }
 
@@ -110,9 +110,9 @@ export class ManageAuthorPage extends Component {
 
   redirect (author) {
     this.setState({saving: false});
-    toastr.success(getFullAuthorName(author) + ' is saved');
+    toastr.success(getFullAuthorName(author) + " is saved");
     if(this.context.router) {
-      this.context.router.push('/authors');
+      this.context.router.push("/authors");
     }
   }
 

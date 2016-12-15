@@ -1,7 +1,7 @@
-import expect from 'expect';
-import React from 'react';
-import TestUtils from 'react-addons-test-utils';
-import CourseForm from './CourseForm';
+import expect from "expect";
+import React from "react";
+import TestUtils from "react-addons-test-utils";
+import CourseForm from "./CourseForm";
 
 const setup  = saving => {
   let props = {
@@ -21,23 +21,23 @@ const setup  = saving => {
   };
 };
 
-describe('CourseForm via React Test Utils', () => {
-  it('renders form and h1' , () => {
+describe("CourseForm via React Test Utils", () => {
+  it("renders form and h1" , () => {
     const {output} = setup();
-    expect(output.type).toBe('form');
+    expect(output.type).toBe("form");
     let [h1] = output.props.children;
-    expect(h1.type).toBe('h1');
+    expect(h1.type).toBe("h1");
   });
 
-  it('save button is labeled "Save" when not saving', () => {
+  it("save button is labeled 'Save' when not saving", () => {
     const{output} = setup(false);
     const submitButton = output.props.children[5];
     expect(submitButton.props.value).toBe('Save');
   });
 
-  it('save button is labeled "Saving..." when saving', () => {
+  it("save button is labeled 'Saving...' when saving", () => {
     const{output} = setup(true);
     const submitButton = output.props.children[5];
-    expect(submitButton.props.value).toBe('Saving...');
+    expect(submitButton.props.value).toBe("Saving...");
   });
 });

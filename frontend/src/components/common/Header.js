@@ -1,7 +1,7 @@
 import React, {PropTypes} from "react";
 import {Link} from "react-router";
-import LoadingDots from './LoadingDots';
-import {AuthedLink} from './AuthedLink';
+import LoadingDots from "./LoadingDots";
+import {AuthedLink} from "./AuthedLink";
 
 const Header = ({loading, coursesCount, authorsCount, onLogout}) => {
   return (

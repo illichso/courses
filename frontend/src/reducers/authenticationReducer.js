@@ -1,5 +1,5 @@
-import InitialAuthValues from '../constants/InitialAuthValues';
-import * as types from '../constants/actionTypes';
+import InitialAuthValues from "../constants/InitialAuthValues";
+import * as types from "../constants/actionTypes";
 
 const {isAuthenticated, username, errorMessage, loading} = InitialAuthValues;
 

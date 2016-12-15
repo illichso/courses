@@ -1,7 +1,7 @@
-import axios from 'axios';
-import * as types from '../constants/actionTypes';
-import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
-import authApi from '../api/authApi';
+import axios from "axios";
+import * as types from "../constants/actionTypes";
+import {beginAjaxCall, ajaxCallError} from "./ajaxStatusActions";
+import authApi from "../api/authApi";
 
 export function displayAuthError(message) {
   return {type: types.ERROR_MESSAGE, message};

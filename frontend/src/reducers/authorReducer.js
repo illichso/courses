@@ -1,5 +1,5 @@
-import * as types from '../constants/actionTypes';
-import initialState from '../constants/initialState';
+import * as types from "../constants/actionTypes";
+import initialState from "../constants/initialState";
 
 const authorReducer = (state = initialState.authors, action) => {
   switch(action.type) {

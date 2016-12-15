@@ -1,11 +1,11 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as courseActions from '../../actions/courseActions';
-import CourseList from './CourseList';
-import {browserHistory} from 'react-router';
-import {shouldShowList, sortCoursesByTitle} from '../../selectors/selectors';
-import toastr from 'toastr';
+import React, {PropTypes, Component} from "react";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as courseActions from "../../actions/courseActions";
+import CourseList from "./CourseList";
+import {browserHistory} from "react-router";
+import {shouldShowList, sortCoursesByTitle} from "../../selectors/selectors";
+import toastr from "toastr";
 
 class CoursePage extends Component {
   constructor(props, context) {
@@ -25,8 +25,8 @@ class CoursePage extends Component {
   }
 
   redirectToAddCoursePage() {
-    this.context.router.push('/course');
-//    browserHistory.push('./course');
+    this.context.router.push("/course");
+//    browserHistory.push("./course");
   }
 
   deleteCourse(event, course) {
@@ -47,7 +47,7 @@ class CoursePage extends Component {
 
   notifySuccessfulCourseDeletion (course) {
     this.resetDeleteingValueInState();
-    toastr.success(course.title+ ' is deleted');
+    toastr.success(course.title+ " is deleted");
   }
 
   resetDeleteingValueInState() {

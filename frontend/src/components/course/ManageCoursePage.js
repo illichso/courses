@@ -1,18 +1,18 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
-import {Router, Route, withRouter} from 'react-router';
-import {bindActionCreators} from 'redux';
-import * as courseActions from '../../actions/courseActions';
-import CourseForm  from './CourseForm';
-import {getById, authorsFormattedForDropdown} from '../../selectors/selectors';
-import toastr from 'toastr';
-import {minimumLength, durationPattern} from '../common/Validation';
-import {emptyCourse} from '../../constants/emptyEntities';
+import React, {PropTypes, Component} from "react";
+import {connect} from "react-redux";
+import {Router, Route, withRouter} from "react-router";
+import {bindActionCreators} from "redux";
+import * as courseActions from "../../actions/courseActions";
+import CourseForm  from "./CourseForm";
+import {getById, authorsFormattedForDropdown} from "../../selectors/selectors";
+import toastr from "toastr";
+import {minimumLength, durationPattern} from "../common/Validation";
+import {emptyCourse} from "../../constants/emptyEntities";
 
-export const titleErrorMsg = 'Course should have a title.';
-export const authorErrorMsg = 'Course should have an author.';
-export const categoryErrorMsg = 'Course should have a category.';
-export const lengthErrorMsg = 'Course should have a valid length with pattern HH:MM:SS';
+export const titleErrorMsg = "Course should have a title.";
+export const authorErrorMsg = "Course should have an author.";
+export const categoryErrorMsg = "Course should have a category.";
+export const lengthErrorMsg = "Course should have a valid length with pattern HH:MM:SS";
 
 export class ManageCoursePage extends Component {
   constructor(props, context){
@@ -47,7 +47,7 @@ export class ManageCoursePage extends Component {
       // return false to prevent a transition w/o prompting the user,
       // or return a string to allow the user to decide:
       if (!this.state.isSaved){
-        return 'Your work is not saved! Are you sure you want to leave?';
+        return "Your work is not saved! Are you sure you want to leave?";
       }
     }
 
@@ -130,9 +130,9 @@ export class ManageCoursePage extends Component {
 
   redirect () {
     this.setState({saving: false});
-    toastr.success('Course saved');
+    toastr.success("Course saved");
     if(this.context.router) {
-      this.context.router.push('/courses');
+      this.context.router.push("/courses");
     }
   }
 

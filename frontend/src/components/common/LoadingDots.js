@@ -1,4 +1,4 @@
-import React, {PropTypes, Component} from 'react';
+import React, {PropTypes, Component} from "react";
 
 class LoadingDots extends Component {
   constructor(props, context){
@@ -22,9 +22,9 @@ class LoadingDots extends Component {
   render() {
     const { props } = this.props;
     let dots = this.state.frame % (this.props.dots + 1);
-    let text = '';
+    let text = "";
     while (dots > 0) {
-      text += '.';
+      text += ".";
       dots--;
     }
     return <span {...props}>{text}&nbsp;</span>;

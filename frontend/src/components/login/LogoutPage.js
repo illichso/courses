@@ -1,9 +1,9 @@
-import React, {Component, PropTypes} from 'react';
-import toastr from 'toastr';
+import React, {Component, PropTypes} from "react";
+import toastr from "toastr";
 import {connect} from "react-redux";
-import {bindActionCreators} from 'redux';
+import {bindActionCreators} from "redux";
 import * as authenticationActions from "../../actions/authenticationActions";
-import LogoutForm from './LogoutForm';
+import LogoutForm from "./LogoutForm";
 
 class LogoutPage extends Component {
 

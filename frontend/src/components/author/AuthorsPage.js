@@ -1,11 +1,11 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as authorActions from '../../actions/authorActions';
-import AuthorList from './AuthorList';
-import {browserHistory} from 'react-router';
-import {getFullAuthorName, shouldShowList, sortAuthors} from '../../selectors/selectors';
-import toastr from 'toastr';
+import React, {PropTypes, Component} from "react";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as authorActions from "../../actions/authorActions";
+import AuthorList from "./AuthorList";
+import {browserHistory} from "react-router";
+import {getFullAuthorName, shouldShowList, sortAuthors} from "../../selectors/selectors";
+import toastr from "toastr";
 
 export class AuthorPage extends Component {
   constructor(props, context) {
@@ -29,8 +29,8 @@ export class AuthorPage extends Component {
   }
 
   redirectToAddAuthorPage() {
-    this.context.router.push('/author');
-//    browserHistory.push('./author');
+    this.context.router.push("/author");
+//    browserHistory.push("./author");
   }
 
 
@@ -66,12 +66,12 @@ export class AuthorPage extends Component {
 
   notifySuccessfulAuthorDeletion (author) {
     this.resetDeleteingValueInState();
-    toastr.success(getFullAuthorName(author) + ' is deleted');
+    toastr.success(getFullAuthorName(author) + " is deleted");
   }
 
   notifyNotSuccessfulAuthorDeletion (author) {
     this.resetDeleteingValueInState();
-    toastr.warning(getFullAuthorName(author) + ' cannot be deleted because there are courses by this author');
+    toastr.warning(getFullAuthorName(author) + " cannot be deleted because there are courses by this author");
   }
 
   resetDeleteingValueInState() {
