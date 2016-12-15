@@ -1,9 +1,9 @@
-import {UserAuthWrapper} from 'redux-auth-wrapper';
+import {UserAuthWrapper} from "redux-auth-wrapper";
 
 export const UserIsAuthenticated = UserAuthWrapper({
   authSelector: state => state.authentication, // how to get the user state
   failureRedirectPath: "/login",
-  wrapperDisplayName: 'UserIsAuthenticated', // a nice name for this auth check
+  wrapperDisplayName: "UserIsAuthenticated", // a nice name for this auth check
   predicate : authentication => authentication.isAuthenticated
 });
 
@@ -12,14 +12,14 @@ export const UserIsNotAuthenticated = UserAuthWrapper({
   authenticatingSelector: state => state.authentication.loading,
   LoadingComponent: null,
   failureRedirectPath: "/",
-  wrapperDisplayName: 'UserIsNotAuthenticated', // a nice name for this auth check
+  wrapperDisplayName: "UserIsNotAuthenticated", // a nice name for this auth check
   predicate : authentication => !authentication.isAuthenticated,
   allowRedirectBack: false
 });
 
 export const VisibleToUser = UserAuthWrapper({
   authSelector: state => state.authentication, // how to get the user state
-  wrapperDisplayName: 'VisibleToUser', // a nice name for this auth check
+  wrapperDisplayName: "VisibleToUser", // a nice name for this auth check
   predicate : authentication => authentication.isAuthenticated,
   FailureComponent: null
 });
