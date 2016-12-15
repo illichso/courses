@@ -5,12 +5,12 @@
 import browserSync from "browser-sync"; //eslint-disable-line
 // Required for react-router browserHistory
 // see https://github.com/BrowserSync/browser-sync/issues/204#issuecomment-102623643
-import historyApiFallback from 'connect-history-api-fallback';
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import config from '../webpack.config.dev';
-import proxyMiddleware from 'http-proxy-middleware';
+import historyApiFallback from "connect-history-api-fallback";
+import webpack from "webpack";
+import webpackDevMiddleware from "webpack-dev-middleware";
+import webpackHotMiddleware from "webpack-hot-middleware";
+import config from "../webpack.config.dev";
+import proxyMiddleware from "http-proxy-middleware";
 
 const bundler = webpack(config);
 
@@ -21,13 +21,13 @@ browserSync({
     port: 3001
   },
   server: {
-    baseDir: 'src',
+    baseDir: "src",
 
     middleware: [
       historyApiFallback(),
 
       // Only needed when testing against real backend, redirects /api calls to Spring Boot backend.
-      proxyMiddleware('/api', {target: 'http://192.168.99.100:8080', changeOrigin: true}),
+      proxyMiddleware("/api", {target: "http://192.168.99.100:8080", changeOrigin: true}),
 
       webpackDevMiddleware(bundler, {
         // Dev middleware can't access config, so we provide publicPath
@@ -55,9 +55,9 @@ browserSync({
     ]
   },
 
-  // no need to watch '*.js' here, webpack will take care of it for us,
+  // no need to watch "*.js" here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
   files: [
-    'src/*.html'
+    "src/*.html"
   ]
 });
