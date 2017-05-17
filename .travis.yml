@@ -41,9 +41,9 @@ script:
   - cd ..; pwd
   - bash <(curl -s https://codecov.io/bash)
 
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_script.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/docker_script.sh; fi
-
-after_script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_afterscript.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/docker_afterscript.sh; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_script.sh; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/docker_script.sh; fi
+#
+#after_script:
+#  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_afterscript.sh; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/docker_afterscript.sh; fi
