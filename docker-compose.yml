@@ -14,9 +14,9 @@ services:
       - "8080:8080"
     networks:
       - net
- frontend:
-   build: ./frontend
-   ports:
-     - "3000:3000"
-   networks:
-     - net
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - net
