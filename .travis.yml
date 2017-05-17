@@ -15,31 +15,31 @@ matrix:
       osx_image: xcode8.2
 
 script:
-  - chmod +x ./travis/delete_node.sh;
-
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./travis/macos/script.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh ./travis/macos/script.sh; fi
-
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/script.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/script.sh; fi
-
-  - uname -a
-  - java -version
-  - npm -v
-  - npm config set loglevel silent
-  - npm config ls
-  - sudo npm install npm@latest -g &>/dev/null
-  - npm cache clean
-  - node -v
-  - npm -v
+#  - chmod +x ./travis/delete_node.sh;
+#
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then chmod +x ./travis/macos/script.sh; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh ./travis/macos/script.sh; fi
+#
+#  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/script.sh; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/script.sh; fi
+#
+#  - uname -a
+#  - java -version
+#  - npm -v
+#  - npm config set loglevel silent
+#  - npm config ls
+#  - sudo npm install npm@latest -g &>/dev/null
+#  - npm cache clean
+#  - node -v
+#  - npm -v
 
   - cd backend; pwd
   - chmod +x ./gradlew
   - pwd; ./gradlew clean build
-  - cd ../frontend; pwd
-  - npm run build -s
-  - cd ..; pwd
-  - bash <(curl -s https://codecov.io/bash)
+#  - cd ../frontend; pwd
+#  - npm run build -s
+#  - cd ..; pwd
+#  - bash <(curl -s https://codecov.io/bash)
 
 #  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./travis/linux/docker_script.sh; fi
 #  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh ./travis/linux/docker_script.sh; fi
